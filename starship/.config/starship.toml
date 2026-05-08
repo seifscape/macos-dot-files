@@ -1,0 +1,310 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+format = """
+[](red)\
+$os\
+$hostname\
+[](bg:peach fg:red)\
+$directory\
+${custom.dir_end}\
+$git_branch$git_status\
+$line_break\
+$character"""
+
+right_format = """
+[](fg:surface1)\
+$status\
+$cmd_duration\
+$memory_usage\
+$package\
+$c\
+$rust\
+$golang\
+$nodejs\
+$bun\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$ruby\
+$swift\
+$conda\
+${custom.azfunc}\
+$aws\
+$azure\
+$time\
+$sudo\
+[](fg:surface1)"""
+
+add_newline = true
+command_timeout = 1000
+palette = "catppuccin_mocha"
+
+[os]
+disabled = false
+style = "bg:red fg:crust"
+
+[os.symbols]
+Macos = "󰀵"
+Windows = ""
+Ubuntu = "󰕈"
+Linux = "󰌽"
+Arch = "󰣇"
+
+[hostname]
+ssh_only = false
+format = "[ $hostname ]($style)"
+style = "bg:red fg:crust"
+
+
+[directory]
+style = "bg:peach fg:crust"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+Documents = "󰈙 "
+Downloads = " "
+Music = "󰝚 "
+Pictures = " "
+Developer = "󰲋 "
+
+
+[git_branch]
+symbol = "  "
+style = "bg:yellow"
+ignore_bare_repo = true
+format = '[[](fg:peach bg:yellow)[ $symbol$branch](fg:crust bg:yellow)]($style)'
+
+
+[git_status]
+style = "bg:yellow fg:crust"
+format = "[ $all_status$ahead_behind ]($style)[](fg:yellow)"
+conflicted = "="
+ahead = "↑"
+behind = "↓"
+untracked = "?"
+stashed = "󰆔"
+modified = "!"
+staged = "+"
+deleted = "-"
+
+
+[status]
+style = 'bg:surface1 fg:blue'
+success_symbol = "􀆅 "
+symbol = "􀆄"
+format = "[ $symbol $common_meaning $signal_name]($style)"
+map_symbol = true
+disabled = false
+
+[sudo]
+disabled = false
+symbol = "⚡ "
+style = "bg:surface1 bold yellow"
+
+
+[nodejs]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:green)"
+
+[bun]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:peach)"
+
+[c]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:sky)"
+
+[rust]
+symbol = "󱘗"
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:peach)"
+
+[golang]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:teal)"
+
+[php]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:mauve)"
+
+[java]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:flamingo)"
+
+[kotlin]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:mauve)"
+
+[haskell]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:lavender)"
+
+[python]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ( $virtualenv) ]($style fg:yellow)"
+
+[swift]
+symbol = ""
+style = "bg:surface1"
+detect_extensions = ['swift']
+detect_files = ['Package.swift']
+format = "[ $symbol $version ]($style fg:red)"
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = "[ $symbol $context ]($style fg:crust)"
+
+[conda]
+symbol = "  "
+style = "bg:sapphire fg:crust"
+format = "[ $symbol$environment ](bg:surface1 fg:sapphire)"
+ignore_base = false
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:surface1"
+format = "[  $time ]($style fg:lavender)"
+
+[cmd_duration]
+min_time = 500
+style = "bg:surface1 fg:yellow"
+format = "[ ⏱ $duration ]($style)"
+
+[package]
+disabled = false
+style = "bg:sapphire fg:crust"
+format = "[ 📦 $version ](bg:surface1 fg:sapphire)"
+
+[character]
+success_symbol = "[❯](bold fg:green)"
+error_symbol = "[❯](bold fg:red)"
+
+
+# Claude Code statusline
+# Cost pill is self-contained so its caps disappear when cost is below threshold
+[profiles]
+claude-code = "[](lavender)$claude_model[](bg:surface1 fg:lavender)$claude_context${custom.statusline_git}[](fg:surface1)$claude_cost"
+
+[claude_model]
+format = "[$symbol$model ]($style)"
+symbol = "🤖 "
+style = "bg:lavender fg:crust"
+model_aliases = {"claude-opus-4-7" = "opus 4.7", "claude-sonnet-4-6" = "sonnet 4.6", "claude-haiku-4-5-20251001" = "haiku 4.5", "claude-opus-4-5" = "opus 4.5", "claude-sonnet-4-5" = "sonnet 4.5"}
+
+[claude_context]
+format = "[ $percentage $gauge $input_tokens ]($style)"
+gauge_width = 4
+gauge_full_symbol = "▰"
+gauge_partial_symbol = ""
+gauge_empty_symbol = "▱"
+
+[[claude_context.display]]
+threshold = 0
+style = "bg:surface1 fg:blue"
+
+[[claude_context.display]]
+threshold = 60
+style = "bg:surface1 fg:yellow"
+
+[[claude_context.display]]
+threshold = 80
+style = "bg:surface1 fg:red"
+
+# Caps live inside the format - they vanish when cost is hidden
+[claude_cost]
+format = " [](mauve)[\\$$cost ]($style)[](fg:mauve)"
+
+[[claude_cost.display]]
+threshold = 0.0
+hidden = true
+
+[[claude_cost.display]]
+threshold = 0.10
+style = "bg:mauve fg:crust"
+
+[custom.statusline_git]
+command = 'git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "?"'
+when = 'git rev-parse --is-inside-work-tree 2>/dev/null'
+format = "[  $output ]($style)"
+style = "bg:surface1 fg:green"
+shell = ["bash", "--norc"]
+
+[ruby]
+symbol = ""
+style = "bg:surface1"
+format = "[ $symbol $version ]($style fg:maroon)"
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = "󰍛"
+style = "bg:surface1"
+format = "[ $symbol ${ram_pct} ]($style fg:mauve)"
+
+[aws]
+symbol = "󰸏"
+style = "bg:surface1"
+format = "[ $symbol $profile(\\($region\\)) ]($style fg:peach)"
+
+[azure]
+symbol = "󰠅"
+style = "bg:surface1"
+format = "[ $symbol $subscription ]($style fg:blue)"
+disabled = false
+
+[custom.azfunc]
+command = "func --version 2>/dev/null | head -1"
+when = "test -f host.json"
+symbol = "⚡"
+style = "bg:surface1"
+format = "[ $symbol $output ]($style fg:yellow)"
+shell = ["bash", "--norc"]
+
+[custom.dir_end]
+command = 'echo 1'
+when = '! git rev-parse --is-inside-work-tree 2>/dev/null'
+format = "[](fg:peach)"
+shell = ["bash", "--norc"]
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

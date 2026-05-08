@@ -1,0 +1,4 @@
+.DS_Store
+git/.gitconfig.local
+*.bak
+ghostty/.config/ghostty/*.png

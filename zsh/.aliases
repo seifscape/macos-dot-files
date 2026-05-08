@@ -1,0 +1,66 @@
+# ====================================
+# Seif's Terminal Aliases
+# ====================================
+
+# --------- Dev Tools ---------
+alias ddd="rm -rf ~/Library/Developer/Xcode/DerivedData"
+alias fastlane='mise exec ruby@ios -- fastlane'
+alias pod='mise exec ruby@ios -- pod'
+
+# --------- eza (pretty ls replacement) ---------
+alias ls="eza --icons --group-directories-first --color=always"
+alias ll="eza -l --icons --group-directories-first --color=always"
+alias la="eza -la --icons --group-directories-first --color=always"
+alias lt="eza -T --icons --group-directories-first --color=always"
+
+# --------- clipboard ---------
+alias -g C='| pbcopy'
+
+# --------- wget ---------
+alias wget='wget --hsts-file=$HOME/.wget-hsts'
+
+# --------- bat / cat improvements ---------
+alias cat='bat --style=numbers,changes --paging=auto'       # Pretty file viewing
+alias catn='bat --style=numbers --paging=always'            # Forced line numbers view
+alias catp='bat --style=plain --paging=never'               # Clean for copy/paste
+alias batp='bat --paging=always --decorations=always'       # Full themed bat preview
+
+# --------- delta (git diff improvements) ---------
+alias diff="delta"
+alias gd="git diff | delta"
+alias gds="git diff --staged | delta"
+
+# --------- curl ---------
+alias curl='curl --progress-bar'
+
+# --------- fzf integrations ---------
+alias hist="atuin search -i"
+alias fbat="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
+# --------- misc quality of life ---------
+alias cls="printf '\033c'"                                     # Clear but keep scrollback
+alias reload="source ~/.zshrc && echo 'Zsh reloaded'"         # Quick reload
+alias edaliases="nvim ~/.aliases"                              # Edit aliases
+alias edexports="nvim ~/.exports"                              # Edit exports
+alias edfunctions="nvim ~/.functions"                          # Edit functions
+
+# --------- tldr (tealdeer) ---------
+alias td='tldr'
+
+# --------- fd ---------
+alias fd-find='fd'
+
+# --------- trash ------
+#alias rm='trash'
+
+# --------- modern system monitors ---------
+alias top='btop'
+alias df='duf'
+alias du='dust'
+alias ps='procs'
+alias battery='batt'
+alias gpu='asitop'
+alias mtop='mactop'
+alias ncdu='ncdu'
+alias gdu='gdu-go'
+alias tree='tree'

@@ -1,0 +1,26 @@
+# ====================================
+# Seif's Shell Functions
+# ====================================
+
+# --------- filesystem ---------
+
+# Git-aware listing: shows git status only if inside a Git repo
+lg() {
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    eza -la --git --icons --group-directories-first --color=always "$@"
+  else
+    eza -la --icons --group-directories-first --color=always "$@"
+  fi
+}
+
+# --------- bat ---------
+
+# Interactively pick a bat theme using fzf
+function batpick() {
+  local file="$1"
+  if [ -z "$file" ]; then
+    echo "Usage: batpick <file>"
+    return 1
+  fi
+  bat --list-themes | fzf --preview="bat --theme={} --color=always \"$file\""
+}
