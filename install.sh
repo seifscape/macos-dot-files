@@ -16,7 +16,7 @@ if ! command -v stow &>/dev/null; then
 fi
 
 # ── stow packages ─────────────────────────────────────────────────────────
-PACKAGES=(zsh git nvim delta starship ghostty scripts homebrew btop atuin)
+PACKAGES=(zsh git nvim delta starship ghostty scripts homebrew btop atuin tmux gh-dash)
 
 for pkg in "${PACKAGES[@]}"; do
   if [ -d "$DOTFILES_DIR/$pkg" ]; then
