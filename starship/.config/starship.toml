@@ -38,7 +38,7 @@ $sudo\
 [](fg:surface1)"""
 
 add_newline = true
-command_timeout = 1000
+command_timeout = 3000
 palette = "catppuccin_mocha"
 
 [os]
