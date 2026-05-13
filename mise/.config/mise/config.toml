@@ -1,0 +1,21 @@
+[tools]
+python = "3.14.3"
+uv = "0.11.6"
+ruby = "3.3.0"
+zig = "0.11.0"
+go = "1.24.2"
+node = "22"
+tuist = "4.48.1"
+rust = "latest"
+fnox = "latest"
+
+
+[tool_alias]
+
+[tool_alias.ruby.versions]
+ios = "3.2.3"
+
+[settings]
+python.compile = true
+python.uv_venv_auto = true
+
