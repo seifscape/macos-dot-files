@@ -11,6 +11,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
+eval "$(fnox activate zsh)"
 eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
 
