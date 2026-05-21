@@ -16,7 +16,7 @@ if ! command -v stow &>/dev/null; then
 fi
 
 # ── stow packages ─────────────────────────────────────────────────────────
-PACKAGES=(zsh git nvim delta starship ghostty scripts homebrew btop atuin tmux gh-dash mise)
+PACKAGES=(zsh git nvim delta starship ghostty scripts homebrew btop atuin tmux gh-dash mise sheldon)
 
 for pkg in "${PACKAGES[@]}"; do
   if [ -d "$DOTFILES_DIR/$pkg" ]; then
@@ -45,14 +45,7 @@ echo "        name = Your Name"
 echo "        email = you@example.com"
 echo "    EOF"
 echo ""
-echo "  Oh My Zsh plugins:"
-echo "    git clone https://github.com/zsh-users/zsh-autosuggestions \\"
-echo "      \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
-echo "    git clone https://github.com/zsh-users/zsh-syntax-highlighting \\"
-echo "      \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
-echo "    git clone https://github.com/djui/alias-tips \\"
-echo "      \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips"
-echo "    git clone https://github.com/Aloxaf/fzf-tab \\"
-echo "      \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab"
+echo "  Sheldon plugins:"
+echo "    sheldon lock"
 echo ""
 info "Done. Open a new terminal or: source ~/.zshrc"

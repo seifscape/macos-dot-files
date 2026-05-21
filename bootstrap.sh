@@ -53,37 +53,16 @@ section "Homebrew Packages"
 info "Running brew bundle..."
 brew bundle --file=homebrew/Brewfile
 
-# ── 5. Oh My Zsh ─────────────────────────────────────────────────────────
-section "Oh My Zsh"
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  info "Installing Oh My Zsh..."
-  RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# ── 5. Sheldon plugins ───────────────────────────────────────────────────
+section "Sheldon Plugins"
+if command -v sheldon &>/dev/null; then
+  info "Locking sheldon plugins..."
+  sheldon lock
 else
-  info "Already installed."
+  warn "sheldon not found — was brew bundle successful?"
 fi
 
-# ── 6. OMZ plugins ───────────────────────────────────────────────────────
-section "OMZ Plugins"
-ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
-
-clone_plugin() {
-  local repo="$1"
-  local name="$2"
-  local dest="$ZSH_CUSTOM/plugins/$name"
-  if [ ! -d "$dest" ]; then
-    info "Installing $name..."
-    git clone "$repo" "$dest"
-  else
-    info "$name already installed."
-  fi
-}
-
-clone_plugin "https://github.com/zsh-users/zsh-autosuggestions"      "zsh-autosuggestions"
-clone_plugin "https://github.com/zsh-users/zsh-syntax-highlighting"  "zsh-syntax-highlighting"
-clone_plugin "https://github.com/djui/alias-tips"                    "alias-tips"
-clone_plugin "https://github.com/Aloxaf/fzf-tab"                     "fzf-tab"
-
-# ── 7. Stow dotfiles ─────────────────────────────────────────────────────
+# ── 6. Stow dotfiles ─────────────────────────────────────────────────────
 section "Stow Dotfiles"
 "$DOTFILES_DIR/install.sh"
 

@@ -48,7 +48,7 @@ Modern CLI tools are better than their ancient counterparts. This setup replaces
 
 | Component | Tool |
 |-----------|------|
-| Shell | Zsh + Oh My Zsh |
+| Shell | Zsh + Sheldon |
 | Prompt | Starship (Catppuccin Mocha) |
 | Terminal | Ghostty |
 | Editor | Neovim (LazyVim + Catppuccin) |
@@ -90,6 +90,8 @@ procs   tldr    ripgrep fd      jq
 
 ### Shell Plugins
 
+Managed by [Sheldon](https://sheldon.cli.rs) (`~/.config/sheldon/plugins.toml`):
+
 | Plugin | Purpose |
 |--------|---------|
 | `zsh-autosuggestions` | Fish-style inline suggestions |
@@ -130,7 +132,7 @@ Surfaces your active Claude Code session at a glance:
 
 ### Bootstrap (recommended)
 
-One command sets up everything on a new machine — Homebrew, packages, Oh My Zsh, plugins, dotfiles, and mise runtimes:
+One command sets up everything on a new machine — Homebrew, packages, Sheldon plugins, dotfiles, and mise runtimes:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/seifscape/macos-dot-files/main/bootstrap.sh | zsh
@@ -175,26 +177,10 @@ cd ~/path/to/macos-dot-files
 brew bundle --file=homebrew/Brewfile
 ```
 
-### 3 — Oh My Zsh
+### 3 — Sheldon plugins
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Then install the plugins:
-
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-git clone https://github.com/djui/alias-tips.git \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
-
-git clone https://github.com/Aloxaf/fzf-tab \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+sheldon lock
 ```
 
 ### 4 — Deploy with stow
@@ -235,6 +221,7 @@ macos-dot-files/
 ├── zsh/                    # .zshrc  .zshenv  .zprofile
 │                           # .aliases  .exports  .functions
 │                           # .dev-functions.zsh  .zsh_bindings
+├── sheldon/                # .config/sheldon/plugins.toml
 ├── nvim/                   # .config/nvim/ — LazyVim + Catppuccin + plugins
 ├── delta/                  # .config/delta/ — delta pager config (Catppuccin Frappe)
 ├── git/                    # .gitconfig  .gitignore_global

@@ -1,0 +1,17 @@
+shell = "zsh"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.alias-tips]
+github = "djui/alias-tips"
+
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
+[plugins.fzf]
+local = "/opt/homebrew/opt/fzf"
+use = ["shell/completion.zsh", "shell/key-bindings.zsh"]
