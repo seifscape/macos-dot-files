@@ -1,12 +1,4 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME=""
-
-zstyle ':omz:update' frequency 7
-
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-eza alias-tips fzf fzf-tab)
-source $ZSH/oh-my-zsh.sh
+eval "$(sheldon source)"
 
 # User configuration
 eval "$(zoxide init zsh)"
