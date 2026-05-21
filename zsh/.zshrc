@@ -1,6 +1,5 @@
+# Initialisation
 eval "$(sheldon source)"
-
-# User configuration
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 eval "$(fnox activate zsh)"
