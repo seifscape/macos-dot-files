@@ -25,6 +25,52 @@ alias catn='bat --style=numbers --paging=always'            # Forced line number
 alias catp='bat --style=plain --paging=never'               # Clean for copy/paste
 alias batp='bat --paging=always --decorations=always'       # Full themed bat preview
 
+# --------- git ---------
+alias g="git"
+alias gst="git status -sb"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gcane="git commit --amend --no-edit"
+alias gcl="git clone"
+
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gsw="git switch"
+alias gswc="git switch -c"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbd="git branch -d"
+
+alias gf="git fetch"
+alias gfa="git fetch --all --prune"
+alias gl="git pull"
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+
+alias glog="git log --oneline --decorate --graph"
+alias gloga="git log --oneline --decorate --graph --all"
+
+alias gstash="git stash"
+alias gstp="git stash pop"
+alias gstl="git stash list"
+alias gstd="git stash drop"
+
+alias grb="git rebase"
+alias grbi="git rebase -i"
+alias grba="git rebase --abort"
+alias grbc="git rebase --continue"
+alias gm="git merge"
+
+alias grh="git reset HEAD"
+alias grhh="git reset --hard HEAD"
+alias grs="git restore"
+alias grss="git restore --staged"
+
+alias gcp="git cherry-pick"
+
 # --------- delta (git diff improvements) ---------
 alias diff="delta"
 alias gd="git diff | delta"
