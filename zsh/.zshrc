@@ -1,3 +1,4 @@
+autoload -Uz compinit && compinit 
 # Initialisation
 eval "$(sheldon source)"
 eval "$(zoxide init zsh)"
