@@ -50,6 +50,21 @@ cd "$DOTFILES_DIR"
 
 # ── 4. Homebrew packages ──────────────────────────────────────────────────
 section "Homebrew Packages"
+info "Trusting third-party taps..."
+brew trust --tap \
+  alexsjones/llmfit \
+  anomalyco/tap \
+  aovestdipaperino/tap \
+  duongductrong/snapzy \
+  iordv/tap \
+  jesseduffield/lazydocker \
+  jundot/omlx \
+  microsoft/git \
+  nikitabobko/tap \
+  productdevbook/tap \
+  steipete/tap \
+  tw93/tap
+
 info "Running brew bundle..."
 brew bundle --file=homebrew/Brewfile
 
