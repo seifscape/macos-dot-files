@@ -2,19 +2,6 @@
 # Seif's Shell Functions
 # ====================================
 
-# --------- python venv ---------
-
-# Auto-deactivate virtualenv when leaving its parent directory
-function _auto_deactivate_venv() {
-  if [[ -n "$VIRTUAL_ENV" ]]; then
-    local venv_parent="${VIRTUAL_ENV:h}"
-    if [[ "$PWD" != "$venv_parent" && "$PWD" != "$venv_parent"/* ]]; then
-      deactivate
-    fi
-  fi
-}
-add-zsh-hook chpwd _auto_deactivate_venv
-
 # --------- filesystem ---------
 
 # Git-aware listing: shows git status only if inside a Git repo
@@ -25,6 +12,20 @@ lg() {
     eza -la --icons --group-directories-first --color=always "$@"
   fi
 }
+
+# --------- python venv ---------
+
+# Auto-deactivate Python venv when leaving its parent directory
+function _auto_deactivate_venv() {
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        local venv_parent=$(dirname "$VIRTUAL_ENV")
+        if [[ "$PWD" != "$venv_parent" && "$PWD" != "$venv_parent/"* ]]; then
+            deactivate
+        fi
+    fi
+}
+autoload -U add-zsh-hook
+add-zsh-hook chpwd _auto_deactivate_venv
 
 # --------- bat ---------
 
