@@ -202,7 +202,7 @@ claude-code = "[](lavender)$claude_model[](bg:surface1 fg:lavender)$claude
 
 [claude_model]
 format = "[$symbol$model ]($style)"
-symbol = "🤖 "
+symbol = "󰚩 "
 style = "bg:lavender fg:crust"
 model_aliases = {"claude-opus-4-7" = "opus 4.7", "claude-sonnet-4-6" = "sonnet 4.6", "claude-haiku-4-5-20251001" = "haiku 4.5", "claude-opus-4-5" = "opus 4.5", "claude-sonnet-4-5" = "sonnet 4.5"}
 
