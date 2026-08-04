@@ -4,6 +4,7 @@ tap "aovestdipaperino/tap"
 tap "darrylmorley/whatcable"
 tap "duongductrong/snapzy", "https://github.com/duongductrong/Snapzy", trusted: true
 tap "emergetools/tap"
+tap "ender-wang/tap"
 tap "frankea/whisky"
 tap "hasanjafri/tap"
 tap "iliyami/macsai"
@@ -16,7 +17,7 @@ tap "microsoft/git", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "productdevbook/tap", trusted: true
 tap "steipete/tap", trusted: true
-tap "tw93/tap"
+tap "tw93/tap", trusted: { formulae: ["mole"] }
 # Apple Intelligence from the command-line, with OpenAi-compatible API server
 brew "apfel"
 # App Store Connect CLI to manage apps, versions, and screenshots
@@ -45,10 +46,14 @@ brew "checkpwn"
 brew "cloudflare-speed-cli"
 # Create and run Linux containers using lightweight virtual machines
 brew "container"
+# Global DNS propagation checker TUI
+brew "dnsglobe"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
 # More intuitive version of du in rust
 brew "dust"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
 # Modern, maintained replacement for ls
 brew "eza"
 # Like neofetch, but much faster because written mostly in C
@@ -91,6 +96,8 @@ brew "jq"
 brew "lazycontainer"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Terminal UI for rsync, written in Rust
+brew "lazyrsync"
 # YAML Parser
 brew "libyaml"
 # Find what models run on your hardware
@@ -99,6 +106,8 @@ brew "llmfit"
 brew "mactop"
 # Mac App Store command-line interface
 brew "mas"
+# Transparent proxy and TUI for debugging MCP traffic
+brew "mcpsnoop"
 # TUI for tracking home projects, maintenance schedules, appliances and quotes
 brew "micasa"
 # Dependency manager that installs and runs Swift command-line tool packages
@@ -109,6 +118,8 @@ brew "mise"
 brew "mkcert"
 # Fast TUI and CLI for browsing AI models, benchmarks, and coding agents
 brew "models"
+# Deep clean and optimize your Mac
+brew "mole"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -171,14 +182,14 @@ brew "aovestdipaperino/tap/tokensave", trusted: true
 brew "emergetools/tap/ettrace", trusted: true
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker", trusted: true
-# Comprehensive macOS cleanup and application uninstall tool
-brew "tw93/tap/mole", trusted: true
 # Keep your computer awake while AI coding agents are working
 cask "adrafinil"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # Private desktop AI chat application
 cask "anythingllm"
+# Replacement for the built-in Cmd+Tab app switcher
+cask "bettercmdtab"
 # Desktop password and login vault
 cask "bitwarden"
 # Open source IDE for exploring and testing APIs
@@ -193,6 +204,10 @@ cask "claudebar"
 cask "macpaw/taps/cleanmymac-cli", trusted: true
 # Menu bar usage monitor for Codex and Claude
 cask "steipete/tap/codexbar"
+# Temperature and clock screensaver
+cask "degr"
+# Native macOS side-panel Markdown notes app
+cask "ender-wang/tap/edgemark", trusted: true
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-ioskeley-mono"
@@ -209,8 +224,14 @@ cask "font-sauce-code-pro-nerd-font"
 cask "ghostty"
 # Cross-platform Git credential storage for multiple hosting providers
 cask "git-credential-manager"
+# IRC client
+cask "halloy"
+# Open-source desktop AI agent
+cask "hermes-desktop"
 # Voice input tool with AI transcription
 cask "input0"
+# Customise mouse behavior
+cask "linearmouse"
 # Open-source Mac cleaner, optimizer, and malware scanner
 cask "iliyami/macsai/mac-sai", trusted: true
 # Screenshot and screen recording tool
@@ -221,6 +242,8 @@ cask "mactools"
 cask "markdown-preview"
 # Fast, private, developer-first clipboard manager
 cask "hasanjafri/tap/mimer", trusted: true
+# Read-only disk space visualiser
+cask "neodisk"
 # Native code and text editor
 cask "neon-vision-editor"
 # Local-first, agent-native design tool
@@ -241,6 +264,8 @@ cask "puremac"
 cask "radix"
 # Native macOS screenshots, recording, annotation, and editing from the menu bar
 cask "duongductrong/snapzy/snapzy"
+# Network toolbox
+cask "surge"
 # Menu bar customization tool
 cask "swiftbar"
 # Native database client for many database types
@@ -312,12 +337,12 @@ mas "MQTTAnalyzer", id: 1493015317
 mas "NetSpot", id: 514951692
 mas "Noa", id: 6475639117
 mas "Notchmeister", id: 1599169747
-mas "Numbers", id: 409203825
 mas "Numbers", id: 361304891
+mas "Numbers", id: 409203825
 mas "OhMyStar", id: 1218642292
 mas "One Thing", id: 1604176982
-mas "Pages", id: 409201541
 mas "Pages", id: 361309726
+mas "Pages", id: 409201541
 mas "Pastel", id: 413897608
 mas "Pause", id: 1599313358
 mas "Petrify", id: 1451177988

@@ -4,6 +4,7 @@ eval "$(sheldon source)"
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 eval "$(fnox activate zsh)"
+eval "$(aube activate zsh)"
 eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
 
