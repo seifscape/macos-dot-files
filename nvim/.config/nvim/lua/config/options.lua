@@ -4,3 +4,4 @@
 vim.g.snacks_animate = false
 -- Turn off automatic clipboard integration (override LazyVim default)
 vim.opt.clipboard = ""
+
