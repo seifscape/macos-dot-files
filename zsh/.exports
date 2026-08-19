@@ -3,8 +3,8 @@
 # ====================================
 
 # --------- Named Directories ---------
-hash -d dev=~/Development
-hash -d dot=~/Development/macos-dot-files/
+hash -d dev=~/Developer/
+hash -d dot=~/Developer/macos-dot-files/
 hash -d dl=~/Downloads
 
 # --------- fzf (catppuccin macchiato) ---------
