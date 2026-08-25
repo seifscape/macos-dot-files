@@ -16,7 +16,7 @@ tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
 tap "macpaw/taps"
 tap "marcvig/tap"
 tap "microsoft/git", trusted: true
-tap "muxy-app/tap", trusted: { casks: ["muxy"] }
+tap "muxy-app/tap"
 tap "nikitabobko/tap", trusted: true
 tap "productdevbook/tap", trusted: true
 tap "steipete/tap", trusted: true
@@ -49,6 +49,8 @@ brew "checkpwn"
 brew "cloudflare-speed-cli"
 # Create and run Linux containers using lightweight virtual machines
 brew "container"
+# Local searchable memory over the session histories of coding agents
+brew "deja-vu"
 # Global DNS propagation checker TUI
 brew "dnsglobe"
 # Disk Usage/Free Utility - a better 'df' alternative
@@ -87,6 +89,8 @@ brew "git-pkgs"
 brew "git-xet"
 # Blazing fast terminal-ui for git written in rust
 brew "gitui"
+# TUI and CLI that unifies every package manager on the system
+brew "gpk"
 # Improved top (interactive process viewer)
 brew "htop"
 # Command-line invoice generator
@@ -95,6 +99,8 @@ brew "invoice"
 brew "ipapatch"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Terminal multiplexer
+brew "tmux"
 # Save all your tmux sessions and lazy restore them
 brew "lazy-tmux"
 # Terminal UI for Apple Containers
@@ -129,6 +135,8 @@ brew "mole"
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Headless browser for AI agents and web scraping
+brew "obscura"
 # Sliding, tiling window manager for MacOS
 brew "paneru"
 # Execute binaries from Python packages in isolated environments
@@ -149,12 +157,12 @@ brew "starship"
 brew "stow"
 # Modern and pretty fancy file manager for the terminal
 brew "superfile"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
 # Interactive TUI for Homebrew
 brew "taproom"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
-# Terminal multiplexer
-brew "tmux"
 # Powerful time tracking tool for the command-line
 brew "tock"
 # CLI tool that moves files or folder to the trash
@@ -195,6 +203,8 @@ brew "jesseduffield/lazydocker/lazydocker", trusted: true
 cask "adrafinil"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
+# AI notepad for meetings
+cask "anarlog"
 # Private desktop AI chat application
 cask "anythingllm"
 # User-friendly GUI app for Homebrew
@@ -229,6 +239,7 @@ cask "easydmg"
 cask "ender-wang/tap/edgemark", trusted: true
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
+cask "font-input"
 cask "font-ioskeley-mono"
 cask "font-jetbrains-maple-mono"
 cask "font-jetbrains-mono"
@@ -238,6 +249,7 @@ cask "font-lilex-nerd-font"
 cask "font-maple-mono"
 cask "font-maple-mono-nf"
 cask "font-monofur-nerd-font"
+cask "font-paper-mono"
 cask "font-sauce-code-pro-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
@@ -249,6 +261,8 @@ cask "halloy"
 cask "hermes-desktop"
 # Voice input tool with AI transcription
 cask "input0"
+# Keyboard and mouse input visualizer
+cask "keyty"
 # Customise mouse behavior
 cask "linearmouse"
 # Open-source Mac cleaner, optimizer, and malware scanner
@@ -263,8 +277,10 @@ cask "markdown-preview"
 cask "hasanjafri/tap/mimer", trusted: true
 # Create mock APIs in seconds
 cask "mockoon"
+# Open-source download manager
+cask "motrix@beta"
 # Terminal multiplexer for macOS
-cask "muxy-app/tap/muxy"
+cask "muxy-app/tap/muxy", trusted: true
 # Read-only disk space visualiser
 cask "neodisk"
 # Native code and text editor
@@ -279,6 +295,8 @@ cask "osaurus"
 cask "palmier-pro"
 # Desktop pet that reflects coding agent activity
 cask "petdex"
+# Menu bar status for coding agent sessions
+cask "ping-island"
 # Menu bar app to find and kill processes running on open ports
 cask "productdevbook/tap/portkiller"
 # Reports power adapter and battery status
@@ -287,18 +305,20 @@ cask "power-monitor"
 cask "puremac"
 # Disk space analyzer
 cask "radix"
+# Manage, sync, and organise AI agent skills across coding tools
+cask "skills-manager"
 # Native macOS screenshots, recording, annotation, and editing from the menu bar
 cask "duongductrong/snapzy/snapzy"
 # Network toolbox
 cask "surge"
 # Menu bar customization tool
 cask "swiftbar"
-# Menu bar toolkit with keep-awake, system monitor and volume mixer
-cask "vorssaint"
 # Native database client for many database types
 cask "tablepro"
 # Menu bar manager
 cask "thaw"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Manage Homebrew packages with a UI
 cask "wailbrew"
 # Menu bar app for USB-C cable diagnostics
@@ -364,12 +384,12 @@ mas "MQTTAnalyzer", id: 1493015317
 mas "NetSpot", id: 514951692
 mas "Noa", id: 6475639117
 mas "Notchmeister", id: 1599169747
-mas "Numbers", id: 361304891
 mas "Numbers", id: 409203825
+mas "Numbers", id: 361304891
 mas "OhMyStar", id: 1218642292
 mas "One Thing", id: 1604176982
-mas "Pages", id: 361309726
 mas "Pages", id: 409201541
+mas "Pages", id: 361309726
 mas "Pastel", id: 413897608
 mas "Pause", id: 1599313358
 mas "Petrify", id: 1451177988
