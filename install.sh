@@ -27,6 +27,20 @@ for pkg in "${PACKAGES[@]}"; do
   fi
 done
 
+# ── unregistered directories ──────────────────────────────────────────────
+# A package folder that is not listed in PACKAGES above is silently never
+# stowed. Warn so a newly added config cannot go unnoticed. NOT_PACKAGES
+# lists directories that intentionally live here without being deployed.
+NOT_PACKAGES=(screenshots .claude .git)
+
+for dir in "$DOTFILES_DIR"/*(/N) "$DOTFILES_DIR"/.*(/N); do
+  name="${dir:t}"
+  [[ "$name" == "." || "$name" == ".." ]] && continue
+  (( ${PACKAGES[(I)$name]} )) && continue
+  (( ${NOT_PACKAGES[(I)$name]} )) && continue
+  warn "Unregistered directory (not in PACKAGES): $name"
+done
+
 # ── manual steps ──────────────────────────────────────────────────────────
 echo ""
 echo "${BOLD}Manual steps required on a new machine:${NC}"

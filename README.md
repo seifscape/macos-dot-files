@@ -287,6 +287,39 @@ Anything printed is a real file that has drifted; re-run `./install.sh` to
 relink it. Note this discards whatever diverged, so diff it against the repo
 copy first if the local version might hold changes worth keeping.
 
+**Adding a new tool** — a config not yet tracked at all needs a package
+directory that mirrors its path relative to `$HOME`, plus an entry in the
+`PACKAGES` list in `install.sh`. Using zellij (`~/.config/zellij/config.kdl`)
+as the example:
+
+```bash
+cd ~/Developer/macos-dot-files
+
+# 1. mirror the path relative to $HOME
+mkdir -p zellij/.config/zellij
+
+# 2. MOVE the existing config in -- do not copy. stow refuses to overwrite
+#    a real file at the target, so a leftover original blocks the package.
+mv ~/.config/zellij/config.kdl zellij/.config/zellij/
+
+# 3. register it in install.sh
+#    PACKAGES=(zsh git nvim ... zellij)
+
+# 4. deploy and commit
+./install.sh
+git add zellij install.sh && git commit -m "Track zellij config"
+```
+
+Skipping step 3 does not fail loudly on its own, so `install.sh` warns about
+any package directory missing from `PACKAGES`:
+
+```
+[warn]  Unregistered directory (not in PACKAGES): zellij
+```
+
+Directories that live here without being deployed (`screenshots`, `.claude`)
+are listed in `NOT_PACKAGES` and stay silent.
+
 **Deliberately untracked:** `~/.gitconfig.local` holds your git identity so it
 never reaches GitHub. It is `.gitignore`d and must be recreated on each machine
 — see [Manual steps](#6--manual-steps).
