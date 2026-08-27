@@ -55,13 +55,25 @@ brew trust --tap \
   alexsjones/llmfit \
   anomalyco/tap \
   aovestdipaperino/tap \
+  bjarneo/cliamp \
+  cameroncooke/axe \
+  darrylmorley/whatcable \
   duongductrong/snapzy \
+  emergetools/tap \
+  ender-wang/tap \
+  frankea/whisky \
+  hasanjafri/tap \
+  iliyami/macsai \
   iordv/tap \
   jesseduffield/lazydocker \
   jundot/omlx \
+  macpaw/taps \
+  marcvig/tap \
   microsoft/git \
+  muxy-app/tap \
   nikitabobko/tap \
   productdevbook/tap \
+  ricardodantas/tap \
   steipete/tap \
   tw93/tap
 

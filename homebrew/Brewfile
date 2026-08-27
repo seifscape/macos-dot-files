@@ -1,6 +1,7 @@
 tap "alexsjones/llmfit", "https://github.com/AlexsJones/homebrew-llmfit", trusted: true
 tap "anomalyco/tap"
 tap "aovestdipaperino/tap"
+tap "bjarneo/cliamp", trusted: { formulae: ["cliamp"] }
 tap "cameroncooke/axe"
 tap "darrylmorley/whatcable"
 tap "duongductrong/snapzy", "https://github.com/duongductrong/Snapzy", trusted: true
@@ -19,10 +20,13 @@ tap "microsoft/git", trusted: true
 tap "muxy-app/tap"
 tap "nikitabobko/tap", trusted: true
 tap "productdevbook/tap", trusted: true
+tap "ricardodantas/tap"
 tap "steipete/tap", trusted: true
 tap "tw93/tap", trusted: { formulae: ["mole"] }
 # Apple Intelligence from the command-line, with OpenAi-compatible API server
 brew "apfel"
+# Download with resuming and segmented downloading
+brew "aria2"
 # App Store Connect CLI to manage apps, versions, and screenshots
 brew "asccli"
 # Perf monitoring CLI tool for Apple Silicon
@@ -49,6 +53,8 @@ brew "checkpwn"
 brew "cloudflare-speed-cli"
 # Create and run Linux containers using lightweight virtual machines
 brew "container"
+# Securely send things from one computer to another
+brew "croc"
 # Local searchable memory over the session histories of coding agents
 brew "deja-vu"
 # Global DNS propagation checker TUI
@@ -145,6 +151,8 @@ brew "pipx"
 brew "podman"
 # Modern replacement for ps written in Rust
 brew "procs"
+# Rsync for cloud storage
+brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
@@ -199,6 +207,8 @@ brew "emergetools/tap/ettrace", trusted: true
 brew "gnomeria/tap/usbtree"
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker", trusted: true
+# Terminal-based automated file organizer inspired by Hazel
+brew "ricardodantas/tap/hazelnut", trusted: true
 # Keep your computer awake while AI coding agents are working
 cask "adrafinil"
 # AeroSpace is an i3-like tiling window manager for macOS
@@ -231,6 +241,10 @@ cask "claudebar"
 cask "macpaw/taps/cleanmymac-cli", trusted: true
 # Menu bar usage monitor for Codex and Claude
 cask "steipete/tap/codexbar"
+# Menu bar display manager: DDC brightness, HiDPI, presets, virtual displays
+cask "crisp"
+# GUI for Apple's container CLI
+cask "davit"
 # Temperature and clock screensaver
 cask "degr"
 # One click DMG installs
@@ -305,6 +319,8 @@ cask "power-monitor"
 cask "puremac"
 # Disk space analyzer
 cask "radix"
+# Advanced API Debugging Proxy
+cask "reqable"
 # Manage, sync, and organise AI agent skills across coding tools
 cask "skills-manager"
 # Native macOS screenshots, recording, annotation, and editing from the menu bar
@@ -327,6 +343,8 @@ cask "darrylmorley/whatcable/whatcable", trusted: true
 cask "frankea/whisky/whisky", trusted: true
 # Install and switch between multiple versions of Xcode
 cask "xcodes-app"
+# REST, GraphQL and gRPC client
+cask "yaak"
 # Multiplayer code editor
 cask "zed"
 mas "Amphetamine", id: 937984704
@@ -377,6 +395,7 @@ mas "Linearity Curve", id: 1219074514
 mas "Localiji", id: 6467663963
 mas "Localization Buddy", id: 6503285923
 mas "Lockera Widgets", id: 6466819847
+mas "Lumina - AI Wellness Companion", id: 6745821470
 mas "Magnet", id: 441258766
 mas "Menu World Time", id: 1446377255
 mas "Microsoft Outlook", id: 985367838
