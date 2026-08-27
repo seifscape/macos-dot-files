@@ -234,7 +234,7 @@ macos-dot-files/
 ├── sheldon/                # .config/sheldon/plugins.toml
 ├── delta/                  # .config/delta/ — delta pager config (Catppuccin Frappe)
 ├── starship/               # starship.toml — Catppuccin Mocha + Claude segment
-├── ghostty/                # terminal config + Catppuccin icon
+├── ghostty/                # terminal config + Catppuccin icon + backgrounds
 ├── tmux/                   # .tmux.conf  .config/tmux/tmux.reset.conf
 ├── atuin/                  # .config/atuin/config.toml
 ├── btop/                   # .config/btop/btop.conf
