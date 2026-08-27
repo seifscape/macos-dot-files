@@ -29,6 +29,3 @@ export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p
 export BAT_THEME="Catppuccin Frappe"
 export BAT_THEME_DARK="Catppuccin Mocha"
 export BAT_THEME_LIGHT="Catppuccin Latte"
-
-# --------- misc ---------
-export ENABLE_LSP_TOOLS=1
