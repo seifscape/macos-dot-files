@@ -110,3 +110,23 @@ alias mtop='mactop'
 alias ncdu='ncdu'
 alias gdu='gdu-go'
 alias tree='tree'
+
+# --------- dotfiles / homebrew ---------
+# Regenerate the tracked Brewfile from the current machine.
+# The PATH prefix puts real npm ahead of aube's shim; without it
+# Homebrew's npm extension fails to parse `npm list` and aborts.
+brewdump() {
+  local bf="$HOME/Developer/macos-dot-files/homebrew/Brewfile"
+  PATH="/opt/homebrew/bin:$PATH" brew bundle dump --force --file="$bf" || return
+  # mas reports TestFlight (and delisted) apps as id: 0. They are not App Store
+  # purchases, so `mas install 0` always fails -- drop them instead of tracking
+  # entries that can only break `brew bundle install` on a fresh machine.
+  local dropped
+  dropped=$(grep ', id: 0$' "$bf")
+  if [ -n "$dropped" ]; then
+    sed -i '' '/^mas .*, id: 0$/d' "$bf"
+    echo "dropped untracked TestFlight/unresolvable apps:"
+    echo "$dropped" | sed 's/^/  /'
+  fi
+  echo "Brewfile updated: $bf"
+}
