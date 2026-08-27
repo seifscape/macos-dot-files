@@ -75,6 +75,14 @@ procs   tldr    ripgrep fd      jq
 | `mactop` | macOS system monitor (htop-style) |
 | `batt` | Battery health + charging limit management |
 
+### Files & Transfer
+
+| Tool | Purpose |
+|------|---------|
+| `croc` | Send files between machines, end-to-end encrypted |
+| `rclone` | Rsync for cloud storage |
+| `aria2` | Multi-protocol downloader with resume + segmenting |
+
 ### Git & Dev
 
 | Tool | Purpose |
