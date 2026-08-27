@@ -225,19 +225,71 @@ EOF
 
 ```
 macos-dot-files/
-├── install.sh              # legacy bootstrap (copies config to ~/)
+├── install.sh              # stows symlinks into ~/ (safe to re-run)
+├── bootstrap.sh            # full new-machine setup
 ├── zsh/                    # .zshrc  .zshenv  .zprofile
-│                           # .aliases  .exports  .functions
-│                           # .dev-functions.zsh  .zsh_bindings
-├── sheldon/                # .config/sheldon/plugins.toml
-├── nvim/                   # .config/nvim/ — LazyVim + Catppuccin + plugins
-├── delta/                  # .config/delta/ — delta pager config (Catppuccin Frappe)
+│                           # .aliases  .exports  .functions  .zsh_bindings
 ├── git/                    # .gitconfig  .gitignore_global
+├── nvim/                   # .config/nvim/ — LazyVim + Catppuccin + plugins
+├── sheldon/                # .config/sheldon/plugins.toml
+├── delta/                  # .config/delta/ — delta pager config (Catppuccin Frappe)
 ├── starship/               # starship.toml — Catppuccin Mocha + Claude segment
 ├── ghostty/                # terminal config + Catppuccin icon
+├── tmux/                   # .tmux.conf  .config/tmux/tmux.reset.conf
+├── atuin/                  # .config/atuin/config.toml
+├── btop/                   # .config/btop/btop.conf
+├── gh-dash/                # .config/gh-dash/config.yml
+├── mise/                   # .config/mise/config.toml
 ├── homebrew/               # Brewfile
 └── scripts/                # dev-updates.sh
 ```
+
+---
+
+## Daily use
+
+`install.sh` deploys **symlinks**, so each file in `$HOME` points back here:
+
+```
+~/.zshrc -> ~/Developer/macos-dot-files/zsh/.zshrc
+```
+
+There is only one real copy of every file. Editing `~/.zshrc` and editing
+`zsh/.zshrc` are the same action — there is no sync step, and `git status` in
+this repo always reflects what is actually live on the machine.
+
+**Editing an existing file** — edit either path, then commit from this repo.
+
+**Adding a new file** — create it inside the package directory, never directly
+in `$HOME`, then re-stow:
+
+```bash
+vim zsh/.zlogin      # in the repo
+./install.sh         # re-stows everything; safe to re-run
+```
+
+A config created directly in `$HOME` is invisible to git and becomes the next
+thing to silently drift out of sync.
+
+**Watch for tools that replace symlinks.** Some editors' atomic-save, and
+`sed -i ''` on macOS, write a new file and rename it over the target — which
+turns the symlink into a regular file, silently detaching it from the repo.
+Check at any time with:
+
+```bash
+for f in ~/.zshrc ~/.zshenv ~/.zprofile ~/.aliases ~/.exports ~/.functions \
+         ~/.zsh_bindings ~/.gitconfig ~/.gitignore_global ~/.tmux.conf; do
+  [ -L "$f" ] || echo "detached (should be a symlink): $f"
+done
+```
+
+Anything printed is a real file that has drifted; re-run `./install.sh` to
+relink it. Note this discards whatever diverged, so diff it against the repo
+copy first if the local version might hold changes worth keeping.
+
+**Deliberately untracked:** `~/.gitconfig.local` holds your git identity so it
+never reaches GitHub. It is `.gitignore`d and must be recreated on each machine
+— see [Manual steps](#6--manual-steps).
 
 ---
 
