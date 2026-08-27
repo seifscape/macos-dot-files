@@ -3,8 +3,13 @@
 # Loaded for all shell types — login, interactive, and scripts
 # ====================================
 
-# --------- uv (Python package manager) ---------
-export PATH="$HOME/.local/bin:$PATH"
+# --------- PATH ---------
+# typeset -U keeps $path deduped. .zshenv is sourced by every zsh
+# invocation, so a plain prepend stacks duplicates in nested shells.
+typeset -U path PATH
+
+# uv (Python package manager)
+path=("$HOME/.local/bin" $path)
 
 # --------- misc ---------
 # Read by Claude Code; lives here so GUI/non-interactive launches see it.
