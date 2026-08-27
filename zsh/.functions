@@ -38,3 +38,14 @@ function batpick() {
   fi
   bat --list-themes | fzf --preview="bat --theme={} --color=always \"$file\""
 }
+
+# --------- dev tools ---------
+
+# Update all dev tools (brew + mise). ~/.config/scripts/dev-updates.sh only
+# reports outdated brew formulae at shell start; this actually upgrades.
+dev-refresh() {
+  echo "🔁 Updating tools..."
+  brew update && brew upgrade
+  mise upgrade --yes && mise reshim
+  echo "✅ Dev tools refreshed."
+}
