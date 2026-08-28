@@ -3,11 +3,13 @@
 # JankyBorders — draws a ring around the focused window so you can tell at a
 # glance which tile has focus.
 #
-# AeroSpace starts this via `exec-and-forget /opt/homebrew/bin/borders` in
-# ~/.aerospace.toml. Run with no arguments, the borders binary execs this file;
-# the call at the bottom (with arguments) then starts the real process.
+# Runs as a brew service (`brew services start borders`), which invokes the
+# binary with no arguments -- that is what makes it exec this file; the call at
+# the bottom, with arguments, then starts the real process. Invoking it with
+# arguments while an instance is running updates that instance in place, so
+# editing this file and running it re-applies without a service restart.
 #
-# Absolute path because AeroSpace's exec environment has a minimal PATH.
+# Absolute path because launchd gives this a minimal PATH.
 #
 # Colours: Catppuccin Macchiato, format 0xAARRGGBB.
 
@@ -21,10 +23,11 @@ options=(
     active_color=0xffc6a0f6      # mauve
     inactive_color=0xff363a4f    # surface0
 
-    # The Simulator draws its own device bezel and resizes itself to the device
-    # aspect ratio; a rectangular ring around it just fights the chrome.
+    # Apps whose own chrome a rectangular ring fights rather than clarifies:
+    # the Simulator draws a device bezel and sizes itself to the device aspect
+    # ratio, Droppy is a floating shelf panel.
     # Names here are application names, not bundle IDs.
-    blacklist="Simulator"
+    blacklist="Simulator,Droppy"
 )
 
 "$BORDERS" "${options[@]}"
