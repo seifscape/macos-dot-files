@@ -20,6 +20,11 @@ options=(
     hidpi=off
     active_color=0xffc6a0f6      # mauve
     inactive_color=0xff363a4f    # surface0
+
+    # The Simulator draws its own device bezel and resizes itself to the device
+    # aspect ratio; a rectangular ring around it just fights the chrome.
+    # Names here are application names, not bundle IDs.
+    blacklist="Simulator"
 )
 
 "$BORDERS" "${options[@]}"
