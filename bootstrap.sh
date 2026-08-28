@@ -60,6 +60,7 @@ brew trust --tap \
   darrylmorley/whatcable \
   duongductrong/snapzy \
   emergetools/tap \
+  felixkratz/formulae \
   ender-wang/tap \
   frankea/whisky \
   hasanjafri/tap \

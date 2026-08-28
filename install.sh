@@ -16,7 +16,8 @@ if ! command -v stow &>/dev/null; then
 fi
 
 # ── stow packages ─────────────────────────────────────────────────────────
-PACKAGES=(zsh git nvim delta starship ghostty scripts homebrew btop atuin tmux gh-dash mise sheldon)
+PACKAGES=(zsh git nvim delta starship ghostty scripts homebrew btop atuin tmux gh-dash mise sheldon
+          aerospace borders vicinae)
 
 for pkg in "${PACKAGES[@]}"; do
   if [ -d "$DOTFILES_DIR/$pkg" ]; then
@@ -61,5 +62,8 @@ echo "    EOF"
 echo ""
 echo "  Sheldon plugins:"
 echo "    sheldon lock"
+echo ""
+echo "  JankyBorders (focus ring) — installed by brew bundle, not started:"
+echo "    brew services start borders"
 echo ""
 info "Done. Open a new terminal or: source ~/.zshrc"

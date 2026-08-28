@@ -55,6 +55,8 @@ Modern CLI tools are better than their ancient counterparts. This setup replaces
 | Font | JetBrains Mono Nerd Font |
 | Theme | Catppuccin Macchiato |
 | Window Manager | AeroSpace (tiling, i3-inspired) |
+| Window Borders | JankyBorders |
+| Launcher | Vicinae (open-source Raycast replacement) |
 | Runtime Manager | Mise (Node, Python, Go, Ruby, …) |
 | History | Atuin (encrypted sync, fuzzy search) |
 | System Info | Fastfetch (on every new session) |
@@ -240,6 +242,9 @@ macos-dot-files/
 ├── btop/                   # .config/btop/btop.conf
 ├── gh-dash/                # .config/gh-dash/config.yml
 ├── mise/                   # .config/mise/config.toml
+├── aerospace/              # .aerospace.toml — tiling WM, keybindings, gaps
+├── borders/                # .config/borders/bordersrc — focus ring
+├── vicinae/                # .config/vicinae/settings.json — launcher
 ├── homebrew/               # Brewfile
 └── scripts/                # dev-updates.sh
 ```
@@ -323,6 +328,119 @@ are listed in `NOT_PACKAGES` and stay silent.
 **Deliberately untracked:** `~/.gitconfig.local` holds your git identity so it
 never reaches GitHub. It is `.gitignore`d and must be recreated on each machine
 — see [Manual steps](#6--manual-steps).
+
+---
+
+## Desktop
+
+Three pieces, each running independently.
+
+**AeroSpace is installed but does not start at login** — see
+[Why no tiling](#why-no-tiling) below. Its config is kept complete, so turning
+it back on is one line. JankyBorders and Vicinae both run on their own and are
+what you actually get day to day.
+
+| Piece | Config | Role |
+|-------|--------|------|
+| **AeroSpace** | `~/.aerospace.toml` | i3-style tiling, 9 workspaces, keybindings — *off by default* |
+| **JankyBorders** | `~/.config/borders/bordersrc` | mauve ring around the focused window (`brew services`) |
+| **Vicinae** | `~/.config/vicinae/settings.json` | launcher / command palette (`Ctrl+Space`) |
+
+### Why no tiling
+
+The usual AeroSpace stack is four pieces — window manager, status bar, borders,
+launcher. Two of those did not survive contact with this setup.
+
+**SketchyBar** only pays off if you hide the macOS menu bar for it, and this
+machine leans on that bar hard (Stats, Calendr, AlDente, Badgeify, boringNotch,
+…). Hiding it buries all of them behind a hover, and AeroSpace already puts the
+focused workspace in the menu bar by itself — the one thing a bar would
+genuinely add. Two stacked bars is worse than either choice.
+
+**AeroSpace itself** runs into Ghostty's native macOS tabs: they are separate
+`NSWindow`s stitched into a tab group, so a single window with six tabs is six
+windows to AeroSpace, and it tiles for six while one is visible. Xcode
+compounds it by refusing to shrink below a large minimum width, which breaks
+even splits for everything sharing its workspace (hence the workspace-2 rule).
+Both are fixable — tmux instead of tabs, one app per workspace — but that is
+restructuring the workflow around the tiler rather than the other way round.
+
+So: keep the macOS menu bar, keep Magnet for snapping, keep the borders ring,
+and leave the tiling config on the shelf. `start-at-login = true` plus a
+relaunch brings it back.
+
+### Launcher
+
+**Vicinae** replaces Raycast — same command-palette shape, open source, native,
+and no account or subscription attached to it. Bound to `Ctrl+Space`, themed
+`catppuccin-mocha` to match everything else.
+
+Its config is `~/.config/vicinae/settings.json`, stowed from this repo like
+everything else. Worth knowing: Vicinae writes to that file itself whenever you
+change a setting through the GUI, and it writes *through* the symlink — so GUI
+tweaks land in the repo and show up as a normal `git diff`. The tradeoff is that
+Vicinae owns the formatting, so hand-written comments in that file get rewritten
+away. If you want commentary that survives, put it in a separate file and list
+it in the `imports` array.
+
+```bash
+vicinae config default    # dump the full default config to see what is settable
+```
+
+### Keybindings
+
+Modifier is **alt** (⌥).
+
+| Key | Action |
+|-----|--------|
+| `alt` + `h` `j` `k` `l` | Focus window left / down / up / right |
+| `alt-shift` + `h` `j` `k` `l` | Move window in that direction |
+| `alt` + `1`…`9` | Switch to workspace |
+| `alt-shift` + `1`…`9` | Move window to workspace and follow it |
+| `alt-tab` | Back and forth between last two workspaces |
+| `alt-shift-tab` | Move workspace to the next monitor |
+| `alt-enter` | New Ghostty window |
+| `alt-b` | New Brave window |
+| `alt-e` | Finder here |
+| `alt-shift-s` | Screenshot region to clipboard |
+| `alt-q` | Close window |
+| `alt-f` | Fullscreen |
+| `alt-shift-space` | Toggle floating / tiling |
+| `alt-slash` | Switch tiles horizontal ↔ vertical |
+| `alt-comma` | Accordion layout |
+| `alt` + `-` / `=` | Resize smaller / larger |
+| `alt-shift-0` | Balance sizes |
+| `alt-r` | Resize mode — `hjkl` to size, `enter` to exit |
+| `alt-semicolon` | Service mode (below) |
+
+**Service mode** (`alt-semicolon`, then):
+
+| Key | Action |
+|-----|--------|
+| `esc` | Reload config |
+| `r` | Flatten the workspace tree (reset layout) |
+| `f` | Toggle floating / tiling |
+| `backspace` | Close all windows but the current one |
+| `alt-shift` + `hjkl` | Join window into that neighbour's container |
+| `↑` / `↓` | Volume up / down |
+| `shift-↓` | Toggle mute |
+
+### Adding a window rule
+
+Apps that resize themselves or open as panels fight tiling — float them.
+Get the bundle ID, then add a rule to `.aerospace.toml`:
+
+```bash
+aerospace list-windows --all --format '%{app-name} %{app-bundle-id}'
+```
+
+```toml
+[[on-window-detected]]
+    if.app-id = 'com.example.app'
+    run = 'layout floating'
+```
+
+`auto-reload-config = true` picks the change up on save.
 
 ---
 
