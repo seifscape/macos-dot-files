@@ -7,6 +7,7 @@ tap "darrylmorley/whatcable"
 tap "duongductrong/snapzy", "https://github.com/duongductrong/Snapzy", trusted: true
 tap "emergetools/tap"
 tap "ender-wang/tap"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
 tap "frankea/whisky"
 tap "gnomeria/tap", "https://github.com/gnomeria/tap.git"
 tap "hasanjafri/tap"
@@ -177,6 +178,8 @@ brew "tock"
 brew "trash"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Tool for working with usage-spec CLIs
+brew "usage"
 # Internet file retriever
 brew "wget"
 # LAN discovery tool with a modern TUI written in Go
@@ -203,6 +206,8 @@ brew "aovestdipaperino/tap/tokensave", trusted: true
 brew "cameroncooke/axe/axe", trusted: true
 # Easily and accurately profile iOS apps
 brew "emergetools/tap/ettrace", trusted: true
+# A window border system for macOS
+brew "felixkratz/formulae/borders", trusted: true
 # Live USB device tree in your terminal
 brew "gnomeria/tap/usbtree"
 # A simple terminal UI for docker, written in Go
@@ -333,6 +338,8 @@ cask "swiftbar"
 cask "tablepro"
 # Menu bar manager
 cask "thaw"
+# Application launcher and command palette
+cask "vicinae"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
 # Manage Homebrew packages with a UI
@@ -380,6 +387,7 @@ mas "Hand Mirror", id: 1502839586
 mas "Helm", id: 6479357934
 mas "Hex Fiend", id: 1342896380
 mas "Home Assistant", id: 1099568401
+mas "HotspotMeter", id: 6763610446
 mas "IconKit", id: 507135296
 mas "iMazing Converter", id: 1292198261
 mas "iMovie", id: 408981434
