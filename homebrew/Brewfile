@@ -359,7 +359,6 @@ mas "Apple Configurator", id: 1037126344
 mas "Asset Catalog Creator", id: 866571115
 mas "Bakery", id: 1575220747
 mas "BlinkMate", id: 6756325660
-mas "Cleaner for Xcode", id: 1296084683
 mas "clipyboard", id: 6738871678
 mas "Clocker", id: 1056643111
 mas "CodeCows", id: 1176112058
@@ -454,14 +453,12 @@ mas "TripMode", id: 1513400665
 mas "Twitter", id: 1482454543
 mas "Tyme", id: 1461456897
 mas "Unsplash Wallpapers", id: 1284863847
-mas "Unzip One", id: 1127253508
 mas "Userscripts", id: 1463298887
 mas "Velja", id: 1607635845
 mas "WeTransfer", id: 1114922065
 mas "WhatsApp", id: 310633997
 mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
-mas "XCleaner", id: 1278104434
 mas "XIndex", id: 6745623987
 vscode "akamud.vscode-theme-onedark"
 vscode "alefragnani.bookmarks"
