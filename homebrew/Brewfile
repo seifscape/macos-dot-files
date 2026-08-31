@@ -167,6 +167,8 @@ brew "stow"
 brew "superfile"
 # Tool to enforce Swift style and conventions
 brew "swiftlint"
+# Netcat-like tool over Tailscale's data plane, without its control plane
+brew "tailcat"
 # Interactive TUI for Homebrew
 brew "taproom"
 # Very fast implementation of tldr in Rust
