@@ -403,13 +403,19 @@ vicinae config default    # dump the full default config to see what is settable
 
 ### Keybindings
 
-Defaults, unedited. Modifier is **alt** (⌥); `Control+Option` is the second
-layer. Note these are arrow keys, not `hjkl`.
+Stock defaults except **focus and move**, which are remapped from arrow keys to
+`hjkl`. The reason is macOS, not muscle memory: a global hotkey on `Option+←/→`
+would eat word-wise cursor movement, and `Option+Shift+←/→` word-wise
+selection, in every text field on the machine. The cost is the dead-key glyphs
+`˙ ∆ ˚ ¬`, which is the cheaper side of that trade.
+
+`Control+Option+L` holds `toggleWorkspaceLayout`, moved off `Option+Shift+L`
+where it collided with the new `move.right`.
 
 | Key | Action |
 |-----|--------|
-| `alt` + `←` `↓` `↑` `→` | Focus window in that direction |
-| `alt-shift` + `←` `↓` `↑` `→` | Move window in that direction |
+| `alt` + `h` `j` `k` `l` | Focus window left / down / up / right |
+| `alt-shift` + `h` `j` `k` `l` | Move window in that direction |
 | `alt` + `1`…`9` | Switch to workspace |
 | `alt-shift` + `1`…`9` | Move window to workspace |
 | `ctrl-alt` + `1`…`9` | Focus column *n* |
@@ -419,7 +425,7 @@ layer. Note these are arrow keys, not `hjkl`.
 | `alt-t` | **Toggle column tabbed** — WM-level tabs |
 | `alt-grave` | Quake terminal (Ghostty) |
 | `alt-shift-o` | Overview |
-| `alt-shift-l` | Flip workspace layout (dwindle ↔ niri) |
+| `ctrl-alt-l` | Flip workspace layout (dwindle ↔ niri) |
 | `ctrl-alt-space` | Command palette |
 | `ctrl-alt-m` | Open menu anywhere |
 | `alt` + `-` / `=` | Container span −10% / +10% |
@@ -431,9 +437,14 @@ layer. Note these are arrow keys, not `hjkl`.
 | `alt-home` / `alt-end` | Focus first / last column |
 | `ctrl-cmd-tab` | Focus next monitor |
 
-169 bindings ship in total; most arrive `Unassigned` — ten scratchpad slots,
+67 of 169 bindings are assigned; the rest arrive `Unassigned` — ten scratchpad slots,
 `preselect` in four directions, per-monitor moves, `toggleFocusedWindowFloating`.
 Fill them in `[[hotkeys]]` by `id`.
+
+Nothing here uses a bare `cmd`, so app shortcuts are untouched, and nothing uses
+a bare `ctrl`+arrow, so macOS *Move left/right a space* and Mission Control keep
+working. `routing.mode = "macOS"` means OmniWM's workspaces ride on native
+Spaces rather than replacing them.
 
 `alt-t` is the one worth knowing. Ghostty's native macOS tabs are separate
 `NSWindow`s stitched into a tab group, so a single window with six tabs looks
