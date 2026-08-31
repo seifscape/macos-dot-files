@@ -1,6 +1,7 @@
 tap "alexsjones/llmfit", "https://github.com/AlexsJones/homebrew-llmfit", trusted: true
 tap "anomalyco/tap"
 tap "aovestdipaperino/tap"
+tap "barutsrb/tap", "https://github.com/BarutSRB/homebrew-tap"
 tap "bjarneo/cliamp", trusted: { formulae: ["cliamp"] }
 tap "cameroncooke/axe"
 tap "darrylmorley/whatcable"
@@ -206,8 +207,6 @@ brew "aovestdipaperino/tap/tokensave", trusted: true
 brew "cameroncooke/axe/axe", trusted: true
 # Easily and accurately profile iOS apps
 brew "emergetools/tap/ettrace", trusted: true
-# A window border system for macOS
-brew "felixkratz/formulae/borders", trusted: true
 # Live USB device tree in your terminal
 brew "gnomeria/tap/usbtree"
 # A simple terminal UI for docker, written in Go
@@ -216,8 +215,8 @@ brew "jesseduffield/lazydocker/lazydocker", trusted: true
 brew "ricardodantas/tap/hazelnut", trusted: true
 # Keep your computer awake while AI coding agents are working
 cask "adrafinil"
-# AeroSpace is an i3-like tiling window manager for macOS
-cask "nikitabobko/tap/aerospace"
+# Classic After Dark screen savers emulator
+cask "afterglow"
 # AI notepad for meetings
 cask "anarlog"
 # Private desktop AI chat application
@@ -252,6 +251,8 @@ cask "crisp"
 cask "davit"
 # Temperature and clock screensaver
 cask "degr"
+# Drag and drop file shelf
+cask "droppy"
 # One click DMG installs
 cask "easydmg"
 # Native macOS side-panel Markdown notes app
@@ -292,6 +293,8 @@ cask "macshot"
 cask "mactools"
 # Markdown previewer with bundled Quick Look extension
 cask "markdown-preview"
+# Minimal markdown editor
+cask "markviewer"
 # Fast, private, developer-first clipboard manager
 cask "hasanjafri/tap/mimer", trusted: true
 # Create mock APIs in seconds
@@ -304,6 +307,8 @@ cask "muxy-app/tap/muxy", trusted: true
 cask "neodisk"
 # Native code and text editor
 cask "neon-vision-editor"
+# Tiling window manager for macOS with Niri-inspired column-based layout
+cask "barutsrb/tap/omniwm", trusted: true
 # Local-first, agent-native design tool
 cask "open-design"
 # Replacement for Docker Desktop
@@ -336,8 +341,12 @@ cask "surge"
 cask "swiftbar"
 # Native database client for many database types
 cask "tablepro"
+# Packet capture and inspection tool
+cask "tcp-viewer"
 # Menu bar manager
 cask "thaw"
+# Monitor token usage, costs, and limits across AI coding tools
+cask "token-monitor"
 # Application launcher and command palette
 cask "vicinae"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
