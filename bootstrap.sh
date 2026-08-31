@@ -61,7 +61,6 @@ brew trust --tap \
   darrylmorley/whatcable \
   duongductrong/snapzy \
   emergetools/tap \
-  felixkratz/formulae \
   ender-wang/tap \
   frankea/whisky \
   hasanjafri/tap \
@@ -73,7 +72,6 @@ brew trust --tap \
   marcvig/tap \
   microsoft/git \
   muxy-app/tap \
-  nikitabobko/tap \
   productdevbook/tap \
   ricardodantas/tap \
   steipete/tap \

@@ -8,7 +8,6 @@ tap "darrylmorley/whatcable"
 tap "duongductrong/snapzy", "https://github.com/duongductrong/Snapzy", trusted: true
 tap "emergetools/tap"
 tap "ender-wang/tap"
-tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
 tap "frankea/whisky"
 tap "gnomeria/tap", "https://github.com/gnomeria/tap.git"
 tap "hasanjafri/tap"
@@ -20,7 +19,6 @@ tap "macpaw/taps"
 tap "marcvig/tap"
 tap "microsoft/git", trusted: true
 tap "muxy-app/tap"
-tap "nikitabobko/tap", trusted: true
 tap "productdevbook/tap", trusted: true
 tap "ricardodantas/tap"
 tap "steipete/tap", trusted: true
