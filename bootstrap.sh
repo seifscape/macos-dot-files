@@ -55,6 +55,7 @@ brew trust --tap \
   alexsjones/llmfit \
   anomalyco/tap \
   aovestdipaperino/tap \
+  barutsrb/tap \
   bjarneo/cliamp \
   cameroncooke/axe \
   darrylmorley/whatcable \

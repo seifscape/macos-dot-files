@@ -54,8 +54,7 @@ Modern CLI tools are better than their ancient counterparts. This setup replaces
 | Editor | Neovim (LazyVim + Catppuccin) |
 | Font | JetBrains Mono Nerd Font |
 | Theme | Catppuccin Macchiato |
-| Window Manager | AeroSpace (tiling, i3-inspired) |
-| Window Borders | JankyBorders |
+| Window Manager | OmniWM (tiling, Hyprland/Niri-inspired) |
 | Launcher | Vicinae (open-source Raycast replacement) |
 | Runtime Manager | Mise (Node, Python, Go, Ruby, …) |
 | History | Atuin (encrypted sync, fuzzy search) |
@@ -242,8 +241,7 @@ macos-dot-files/
 ├── btop/                   # .config/btop/btop.conf
 ├── gh-dash/                # .config/gh-dash/config.yml
 ├── mise/                   # .config/mise/config.toml
-├── aerospace/              # .aerospace.toml — tiling WM, keybindings, gaps
-├── borders/                # .config/borders/bordersrc — focus ring
+├── omniwm/                 # .config/omniwm/settings.toml — tiling WM
 ├── vicinae/                # .config/vicinae/settings.json — launcher
 ├── homebrew/               # Brewfile
 └── scripts/                # dev-updates.sh
@@ -333,41 +331,57 @@ never reaches GitHub. It is `.gitignore`d and must be recreated on each machine
 
 ## Desktop
 
-Three pieces, each running independently.
-
-**AeroSpace is installed but does not start at login** — see
-[Why no tiling](#why-no-tiling) below. Its config is kept complete, so turning
-it back on is one line. JankyBorders and Vicinae both run on their own and are
-what you actually get day to day.
+Two pieces, each running independently.
 
 | Piece | Config | Role |
 |-------|--------|------|
-| **AeroSpace** | `~/.aerospace.toml` | i3-style tiling, 9 workspaces, keybindings — *off by default* |
-| **JankyBorders** | `~/.config/borders/bordersrc` | mauve ring around the focused window (`brew services`) |
+| **OmniWM** | `~/.config/omniwm/settings.toml` | tiling, workspaces, borders, quake terminal |
 | **Vicinae** | `~/.config/vicinae/settings.json` | launcher / command palette (`Ctrl+Space`) |
 
-### Why no tiling
+OmniWM replaced AeroSpace, and absorbed JankyBorders along with it — both are
+uninstalled. It ships its own focus ring, so a separate borders daemon is
+redundant. It also ships a workspace bar, a menu bar hider and a Ghostty quake
+terminal, which is the SketchyBar job that was never worth wiring up by hand.
 
-The usual AeroSpace stack is four pieces — window manager, status bar, borders,
-launcher. Two of those did not survive contact with this setup.
+Requires macOS 26+ on Apple Silicon, and grants of Accessibility and Input
+Monitoring on first launch. Never needs SIP disabled.
 
-**SketchyBar** only pays off if you hide the macOS menu bar for it, and this
-machine leans on that bar hard (Stats, Calendr, AlDente, Badgeify, boringNotch,
-…). Hiding it buries all of them behind a hover, and AeroSpace already puts the
-focused workspace in the menu bar by itself — the one thing a bar would
-genuinely add. Two stacked bars is worse than either choice.
+### Layout
 
-**AeroSpace itself** runs into Ghostty's native macOS tabs: they are separate
-`NSWindow`s stitched into a tab group, so a single window with six tabs is six
-windows to AeroSpace, and it tiles for six while one is visible. Xcode
-compounds it by refusing to shrink below a large minimum width, which breaks
-even splits for everything sharing its workspace (hence the workspace-2 rule).
-Both are fixable — tmux instead of tabs, one app per workspace — but that is
-restructuring the workflow around the tiler rather than the other way round.
+`defaultLayoutType = "dwindle"` — Hyprland-style binary space partitioning, where
+each new window bisects the focused tile along its wider axis. The `[niri]`
+table is left at defaults, so `Option+Shift+L` flips a single workspace over to
+scrolling columns without touching the config.
 
-So: keep the macOS menu bar, keep Magnet for snapping, keep the borders ring,
-and leave the tiling config on the shelf. `start-at-login = true` plus a
-relaunch brings it back.
+Note the settings file is generated: OmniWM owns the formatting and rewrites it
+whenever you change something in its settings UI. Stow links the *directory*
+(`~/.config/omniwm` → this repo), not the file, so those rewrites land in the
+repo as a normal `git diff` and nothing clobbers the symlink. Hand-written
+comments in it will not survive.
+
+### Borders
+
+Catppuccin mauve, matching the ring JankyBorders used to draw:
+
+```toml
+[borders]
+enabled = true
+width = 3.0
+
+[borders.color]
+red = 0.7764705882352941    # #c6a0f6
+green = 0.6274509803921569
+blue = 0.9647058823529412
+alpha = 1.0
+```
+
+Corner radii are derived per window automatically, so it follows rounded window
+shapes without a `style` key. Two things JankyBorders did that this cannot:
+there is no inactive-window colour (the struct is `enabled`/`width`/`color`, one
+colour only), and there is no blacklist — the Simulator and Droppy get a ring
+again. Width is `3.0` rather than the old `6.0` because JankyBorders ran
+`hidpi=off` and drew at 1x; OmniWM rounds to physical pixels, so half the number
+is the same apparent weight.
 
 ### Launcher
 
@@ -389,58 +403,56 @@ vicinae config default    # dump the full default config to see what is settable
 
 ### Keybindings
 
-Modifier is **alt** (⌥).
+Defaults, unedited. Modifier is **alt** (⌥); `Control+Option` is the second
+layer. Note these are arrow keys, not `hjkl`.
 
 | Key | Action |
 |-----|--------|
-| `alt` + `h` `j` `k` `l` | Focus window left / down / up / right |
-| `alt-shift` + `h` `j` `k` `l` | Move window in that direction |
+| `alt` + `←` `↓` `↑` `→` | Focus window in that direction |
+| `alt-shift` + `←` `↓` `↑` `→` | Move window in that direction |
 | `alt` + `1`…`9` | Switch to workspace |
-| `alt-shift` + `1`…`9` | Move window to workspace and follow it |
-| `alt-tab` | Back and forth between last two workspaces |
-| `alt-shift-tab` | Move workspace to the next monitor |
-| `alt-enter` | New Ghostty window |
-| `alt-b` | New Brave window |
-| `alt-e` | Finder here |
-| `alt-shift-s` | Screenshot region to clipboard |
-| `alt-q` | Close window |
-| `alt-f` | Fullscreen |
-| `alt-shift-space` | Toggle floating / tiling |
-| `alt-slash` | Switch tiles horizontal ↔ vertical |
-| `alt-comma` | Accordion layout |
-| `alt` + `-` / `=` | Resize smaller / larger |
-| `alt-shift-0` | Balance sizes |
-| `alt-r` | Resize mode — `hjkl` to size, `enter` to exit |
-| `alt-semicolon` | Service mode (below) |
+| `alt-shift` + `1`…`9` | Move window to workspace |
+| `ctrl-alt` + `1`…`9` | Focus column *n* |
+| `ctrl-alt-tab` | Back and forth between last two workspaces |
+| `alt-tab` | Focus previously focused window |
+| `alt-enter` | Toggle fullscreen |
+| `alt-t` | **Toggle column tabbed** — WM-level tabs |
+| `alt-grave` | Quake terminal (Ghostty) |
+| `alt-shift-o` | Overview |
+| `alt-shift-l` | Flip workspace layout (dwindle ↔ niri) |
+| `ctrl-alt-space` | Command palette |
+| `ctrl-alt-m` | Open menu anywhere |
+| `alt` + `-` / `=` | Container span −10% / +10% |
+| `alt-shift` + `-` / `=` | Window span −10% / +10% |
+| `alt` + `,` / `.` | Cycle preset size back / forward |
+| `alt-shift-f` | Container to full span |
+| `alt-shift-b` | Balance sizes |
+| `alt-shift-r` | Raise all floating windows |
+| `alt-home` / `alt-end` | Focus first / last column |
+| `ctrl-cmd-tab` | Focus next monitor |
 
-**Service mode** (`alt-semicolon`, then):
+169 bindings ship in total; most arrive `Unassigned` — ten scratchpad slots,
+`preselect` in four directions, per-monitor moves, `toggleFocusedWindowFloating`.
+Fill them in `[[hotkeys]]` by `id`.
 
-| Key | Action |
-|-----|--------|
-| `esc` | Reload config |
-| `r` | Flatten the workspace tree (reset layout) |
-| `f` | Toggle floating / tiling |
-| `backspace` | Close all windows but the current one |
-| `alt-shift` + `hjkl` | Join window into that neighbour's container |
-| `↑` / `↓` | Volume up / down |
-| `shift-↓` | Toggle mute |
+`alt-t` is the one worth knowing. Ghostty's native macOS tabs are separate
+`NSWindow`s stitched into a tab group, so a single window with six tabs looks
+like six windows to any Accessibility-API window manager — the thing that made
+AeroSpace unusable here. OmniWM's own tabbed columns are the way around it:
+stop using `cmd-t`, and let the WM stack windows into a tab group it understands.
 
 ### Adding a window rule
 
 Apps that resize themselves or open as panels fight tiling — float them.
-Get the bundle ID, then add a rule to `.aerospace.toml`:
-
-```bash
-aerospace list-windows --all --format '%{app-name} %{app-bundle-id}'
-```
 
 ```toml
-[[on-window-detected]]
-    if.app-id = 'com.example.app'
-    run = 'layout floating'
+[[appRules]]
+bundleId = "com.example.app"
+layout = "float"
 ```
 
-`auto-reload-config = true` picks the change up on save.
+Also available per rule: `titleRegex`, `assignToWorkspace`, `minWidth` /
+`minHeight`, and `initialContainerPrimarySpan`. Settings live-reload on save.
 
 ---
 

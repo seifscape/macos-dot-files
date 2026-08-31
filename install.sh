@@ -17,7 +17,7 @@ fi
 
 # ── stow packages ─────────────────────────────────────────────────────────
 PACKAGES=(zsh git nvim delta starship ghostty scripts homebrew btop atuin tmux gh-dash mise sheldon
-          aerospace borders vicinae)
+          omniwm vicinae)
 
 for pkg in "${PACKAGES[@]}"; do
   if [ -d "$DOTFILES_DIR/$pkg" ]; then
@@ -63,7 +63,8 @@ echo ""
 echo "  Sheldon plugins:"
 echo "    sheldon lock"
 echo ""
-echo "  JankyBorders (focus ring) — installed by brew bundle, not started:"
-echo "    brew services start borders"
+echo "  OmniWM (tiling window manager) — grant on first launch:"
+echo "    Accessibility and Input Monitoring (required)"
+echo "    Screen Recording (optional — overview thumbnails only)"
 echo ""
 info "Done. Open a new terminal or: source ~/.zshrc"
