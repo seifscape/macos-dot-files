@@ -257,6 +257,8 @@ cask "droppy"
 cask "easydmg"
 # Native macOS side-panel Markdown notes app
 cask "ender-wang/tap/edgemark", trusted: true
+# Terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client
+cask "electerm"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-input"
@@ -311,6 +313,8 @@ cask "neon-vision-editor"
 cask "barutsrb/tap/omniwm", trusted: true
 # Local-first, agent-native design tool
 cask "open-design"
+# Open-source design editor compatible with Figma
+cask "openpencil"
 # Replacement for Docker Desktop
 cask "orbstack"
 # LLM server built on MLX
@@ -341,6 +345,8 @@ cask "surge"
 cask "swiftbar"
 # Native database client for many database types
 cask "tablepro"
+# Lightweight database management tool
+cask "tabularis"
 # Packet capture and inspection tool
 cask "tcp-viewer"
 # Menu bar manager
@@ -353,6 +359,8 @@ cask "vicinae"
 cask "vorssaint"
 # Manage Homebrew packages with a UI
 cask "wailbrew"
+# Native desktop app for coding agents
+cask "waku"
 # Menu bar app for USB-C cable diagnostics
 cask "darrylmorley/whatcable/whatcable", trusted: true
 # Active community fork of the archived Wine wrapper
