@@ -21,7 +21,6 @@ tap "microsoft/git", trusted: true
 tap "muxy-app/tap"
 tap "productdevbook/tap", trusted: true
 tap "ricardodantas/tap"
-tap "steipete/tap", trusted: true
 tap "tw93/tap", trusted: { formulae: ["mole"] }
 # Apple Intelligence from the command-line, with OpenAi-compatible API server
 brew "apfel"
@@ -441,8 +440,8 @@ mas "Numbers", id: 361304891
 mas "Numbers", id: 409203825
 mas "OhMyStar", id: 1218642292
 mas "One Thing", id: 1604176982
-mas "Pages", id: 361309726
 mas "Pages", id: 409201541
+mas "Pages", id: 361309726
 mas "Pastel", id: 413897608
 mas "Pause", id: 1599313358
 mas "Petrify", id: 1451177988
