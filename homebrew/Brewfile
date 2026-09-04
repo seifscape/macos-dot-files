@@ -249,8 +249,6 @@ cask "claudebar"
 cask "clawd-on-desk"
 # Command-line interface for CleanMyMac
 cask "macpaw/taps/cleanmymac-cli", trusted: true
-# Menu bar usage monitor for Codex and Claude
-cask "steipete/tap/codexbar"
 # Menu bar display manager: DDC brightness, HiDPI, presets, virtual displays
 cask "crisp"
 # GUI for Apple's container CLI
