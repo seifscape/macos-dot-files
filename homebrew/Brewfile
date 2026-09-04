@@ -97,6 +97,8 @@ brew "git-xet"
 brew "gitui"
 # TUI and CLI that unifies every package manager on the system
 brew "gpk"
+# Futuristic take on hexdump
+brew "hex"
 # Improved top (interactive process viewer)
 brew "htop"
 # Command-line invoice generator
@@ -217,6 +219,8 @@ brew "ricardodantas/tap/hazelnut", trusted: true
 cask "adrafinil"
 # Classic After Dark screen savers emulator
 cask "afterglow"
+# Menu bar system monitor
+cask "airstats"
 # AI notepad for meetings
 cask "anarlog"
 # Private desktop AI chat application
@@ -241,6 +245,8 @@ cask "caskhub"
 cask "claude-code@latest"
 # Menu bar app for monitoring AI coding assistant usage quotas
 cask "claudebar"
+# Desktop pet that reacts to AI coding agents
+cask "clawd-on-desk"
 # Command-line interface for CleanMyMac
 cask "macpaw/taps/cleanmymac-cli", trusted: true
 # Menu bar usage monitor for Codex and Claude
@@ -251,6 +257,8 @@ cask "crisp"
 cask "davit"
 # Temperature and clock screensaver
 cask "degr"
+# Disk benchmark and S.M.A.R.T. health monitor
+cask "diskboard"
 # Drag and drop file shelf
 cask "droppy"
 # One click DMG installs
@@ -287,10 +295,14 @@ cask "input0"
 cask "keyty"
 # Customise mouse behavior
 cask "linearmouse"
+# Menu bar performance monitor with recorded history and analytics
+cask "mac-performance-monitor"
 # Open-source Mac cleaner, optimizer, and malware scanner
 cask "iliyami/macsai/mac-sai", trusted: true
 # Screenshot and screen recording tool
 cask "macshot"
+# Screenshot and screen recording tool without upload integrations
+cask "macshot-offline"
 # Menu bar toolbox
 cask "mactools"
 # Markdown previewer with bundled Quick Look extension
@@ -427,12 +439,12 @@ mas "MQTTAnalyzer", id: 1493015317
 mas "NetSpot", id: 514951692
 mas "Noa", id: 6475639117
 mas "Notchmeister", id: 1599169747
-mas "Numbers", id: 409203825
 mas "Numbers", id: 361304891
+mas "Numbers", id: 409203825
 mas "OhMyStar", id: 1218642292
 mas "One Thing", id: 1604176982
-mas "Pages", id: 409201541
 mas "Pages", id: 361309726
+mas "Pages", id: 409201541
 mas "Pastel", id: 413897608
 mas "Pause", id: 1599313358
 mas "Petrify", id: 1451177988
