@@ -282,6 +282,8 @@ cask "font-sauce-code-pro-nerd-font"
 cask "ghostty"
 # Cross-platform Git credential storage for multiple hosting providers
 cask "git-credential-manager"
+# Git client for simultaneous branches on top of your existing workflow
+cask "gitbutler"
 # IRC client
 cask "halloy"
 # Open-source desktop AI agent
@@ -425,6 +427,7 @@ mas "Kickstart", id: 6758355178
 mas "LaunchBuddy", id: 1615169630
 mas "Lazy Stats", id: 6758316752
 mas "Linearity Curve", id: 1219074514
+mas "Linkwarden for Safari", id: 6763451006
 mas "Localiji", id: 6467663963
 mas "Localization Buddy", id: 6503285923
 mas "Lockera Widgets", id: 6466819847
