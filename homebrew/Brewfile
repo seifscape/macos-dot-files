@@ -304,6 +304,8 @@ cask "macshot"
 cask "macshot-offline"
 # Menu bar toolbox
 cask "mactools"
+# Disk cleaner and storage analyser
+cask "mangodisk"
 # Markdown previewer with bundled Quick Look extension
 cask "markdown-preview"
 # Minimal markdown editor
@@ -443,8 +445,8 @@ mas "Numbers", id: 361304891
 mas "Numbers", id: 409203825
 mas "OhMyStar", id: 1218642292
 mas "One Thing", id: 1604176982
-mas "Pages", id: 409201541
 mas "Pages", id: 361309726
+mas "Pages", id: 409201541
 mas "Pastel", id: 413897608
 mas "Pause", id: 1599313358
 mas "Petrify", id: 1451177988
