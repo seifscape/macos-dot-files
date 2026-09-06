@@ -189,6 +189,8 @@ brew "whosthere"
 brew "xcodegen"
 # Command-line tool to install and switch between multiple versions of Xcode
 brew "xcodes"
+# Very fast Essential Video Decoder, MPEG-5 EVC (Essential Video Coding)
+brew "xevd"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
@@ -227,6 +229,8 @@ cask "anythingllm"
 cask "applite"
 # Replacement for the built-in Cmd+Tab app switcher
 cask "bettercmdtab"
+# Invoice manager
+cask "billy"
 # Desktop password and login vault
 cask "bitwarden"
 # Open source IDE for exploring and testing APIs
@@ -321,7 +325,7 @@ cask "muxy-app/tap/muxy", trusted: true
 cask "neodisk"
 # Native code and text editor
 cask "neon-vision-editor"
-# Tiling window manager for macOS with Niri-inspired column-based layout
+# Tiling window manager
 cask "omniwm"
 # Local-first, agent-native design tool
 cask "open-design"
@@ -444,8 +448,8 @@ mas "Numbers", id: 361304891
 mas "Numbers", id: 409203825
 mas "OhMyStar", id: 1218642292
 mas "One Thing", id: 1604176982
-mas "Pages", id: 361309726
 mas "Pages", id: 409201541
+mas "Pages", id: 361309726
 mas "Pastel", id: 413897608
 mas "Pause", id: 1599313358
 mas "Petrify", id: 1451177988
