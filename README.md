@@ -186,6 +186,21 @@ cd ~/path/to/macos-dot-files
 brew bundle --file=homebrew/Brewfile
 ```
 
+To regenerate the Brewfile after installing new things, use `brewdump`
+(defined in `zsh/.aliases`) rather than `brew bundle dump` directly:
+
+```bash
+brewdump
+```
+
+A plain `brew bundle dump` crashes on this machine. `aube` shims `npm` and
+its `npm list -g --json` returns a JSON array where real npm returns an
+object, so Homebrew's npm extension dies with `no implicit conversion of
+String into Integer`. `brewdump` prefixes `PATH` with `/opt/homebrew/bin`
+to put real npm first, and strips the `mas ..., id: 0` lines that TestFlight
+apps produce — those are not App Store purchases, so `brew bundle install`
+can never satisfy them.
+
 ### 3 — Sheldon plugins
 
 ```bash
