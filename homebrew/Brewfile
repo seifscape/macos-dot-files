@@ -97,6 +97,8 @@ brew "gitui"
 brew "gpk"
 # Futuristic take on hexdump
 brew "hex"
+# Self-hosted search engine for your browsing history
+brew "hister"
 # Improved top (interactive process viewer)
 brew "htop"
 # Command-line invoice generator
@@ -227,6 +229,10 @@ cask "anarlog"
 cask "anythingllm"
 # User-friendly GUI app for Homebrew
 cask "applite"
+# Multi-track audio editor and recorder
+cask "audacity"
+# Multi-track audio editor and recorder
+cask "audacity@3"
 # Replacement for the built-in Cmd+Tab app switcher
 cask "bettercmdtab"
 # Invoice manager
@@ -263,11 +269,16 @@ cask "diskboard"
 cask "droppy"
 # One click DMG installs
 cask "easydmg"
+# Cleaning, privacy, and system optimisation utility
+cask "easymac-cleaner"
 # Native macOS side-panel Markdown notes app
 cask "ender-wang/tap/edgemark", trusted: true
 # Terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client
 cask "electerm"
+# Radial command wheel triggered by holding a key and flicking the mouse
+cask "flick"
 cask "font-fira-code-nerd-font"
+cask "font-google-sans-flex"
 cask "font-hack-nerd-font"
 cask "font-input"
 cask "font-ioskeley-mono"
@@ -279,6 +290,7 @@ cask "font-lilex-nerd-font"
 cask "font-maple-mono"
 cask "font-maple-mono-nf"
 cask "font-monofur-nerd-font"
+cask "font-nebula-sans"
 cask "font-paper-mono"
 cask "font-sauce-code-pro-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
@@ -291,6 +303,8 @@ cask "gitbutler"
 cask "halloy"
 # Open-source desktop AI agent
 cask "hermes-desktop"
+# Homebrew's official GUI
+cask "homebrew-app"
 # Voice input tool with AI transcription
 cask "input0"
 # Keyboard and mouse input visualizer
@@ -325,6 +339,8 @@ cask "muxy-app/tap/muxy", trusted: true
 cask "neodisk"
 # Native code and text editor
 cask "neon-vision-editor"
+# Network diagnostics tool
+cask "network-weather"
 # Tiling window manager
 cask "omniwm"
 # Local-first, agent-native design tool
@@ -345,6 +361,8 @@ cask "ping-island"
 cask "productdevbook/tap/portkiller"
 # Reports power adapter and battery status
 cask "power-monitor"
+# End-to-end encrypted notes, tasks, files, journal, passwords and bookmark sync
+cask "privacynotes"
 # Open-source application manager and system cleaner
 cask "puremac"
 # Disk space analyzer
@@ -381,12 +399,16 @@ cask "waku"
 cask "darrylmorley/whatcable/whatcable", trusted: true
 # Active community fork of the archived Wine wrapper
 cask "frankea/whisky/whisky", trusted: true
+# Manage native Linux VMs and remote WSL distros
+cask "wsl-manager"
 # Install and switch between multiple versions of Xcode
 cask "xcodes-app"
 # REST, GraphQL and gRPC client
 cask "yaak"
 # Multiplayer code editor
 cask "zed"
+# Terminal for agent-driven development
+cask "zentty"
 mas "Amphetamine", id: 937984704
 mas "Apple Configurator", id: 1037126344
 mas "Asset Catalog Creator", id: 866571115
@@ -428,6 +450,7 @@ mas "IPTV Stream Player", id: 6479939671
 mas "Irvue", id: 1039633667
 mas "Itsyhome", id: 6758070650
 mas "Keynote", id: 409183694
+mas "Keynote", id: 361285480
 mas "Kickstart", id: 6758355178
 mas "LaunchBuddy", id: 1615169630
 mas "Lazy Stats", id: 6758316752
@@ -444,8 +467,8 @@ mas "MQTTAnalyzer", id: 1493015317
 mas "NetSpot", id: 514951692
 mas "Noa", id: 6475639117
 mas "Notchmeister", id: 1599169747
-mas "Numbers", id: 361304891
 mas "Numbers", id: 409203825
+mas "Numbers", id: 361304891
 mas "OhMyStar", id: 1218642292
 mas "One Thing", id: 1604176982
 mas "Pages", id: 409201541
