@@ -233,8 +233,12 @@ cask "applite"
 cask "audacity"
 # Multi-track audio editor and recorder
 cask "audacity@3"
+# Add apps to the menu bar
+cask "badgeify"
 # Replacement for the built-in Cmd+Tab app switcher
 cask "bettercmdtab"
+# Display management tool
+cask "betterdisplay"
 # Invoice manager
 cask "billy"
 # Desktop password and login vault
@@ -249,6 +253,8 @@ cask "marcvig/tap/caffeine-timer", trusted: true
 cask "canario"
 # Native GUI for Homebrew casks
 cask "caskhub"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code@latest"
 # Menu bar app for monitoring AI coding assistant usage quotas
@@ -259,12 +265,20 @@ cask "clawd-on-desk"
 cask "macpaw/taps/cleanmymac-cli", trusted: true
 # Menu bar display manager: DDC brightness, HiDPI, presets, virtual displays
 cask "crisp"
+# Server and cloud storage browser
+cask "cyberduck"
 # GUI for Apple's container CLI
 cask "davit"
+# Database version management tool
+cask "dbngin"
 # Temperature and clock screensaver
 cask "degr"
+# Voice and text chat software
+cask "discord"
 # Disk benchmark and S.M.A.R.T. health monitor
 cask "diskboard"
+# Window peeking utility app
+cask "dockdoor"
 # Drag and drop file shelf
 cask "droppy"
 # One click DMG installs
@@ -275,6 +289,8 @@ cask "easymac-cleaner"
 cask "ender-wang/tap/edgemark", trusted: true
 # Terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client
 cask "electerm"
+# Collaborative team software
+cask "figma"
 # Radial command wheel triggered by holding a key and flicking the mouse
 cask "flick"
 cask "font-fira-code-nerd-font"
@@ -293,22 +309,36 @@ cask "font-monofur-nerd-font"
 cask "font-nebula-sans"
 cask "font-paper-mono"
 cask "font-sauce-code-pro-nerd-font"
+# Cross-platform multithreaded download manager
+cask "ghost-downloader"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Cross-platform Git credential storage for multiple hosting providers
 cask "git-credential-manager"
 # Git client for simultaneous branches on top of your existing workflow
 cask "gitbutler"
+# Desktop client for GitHub repositories
+cask "github"
+# Native client for GitHub Copilot
+cask "github-copilot-app"
 # IRC client
 cask "halloy"
 # Open-source desktop AI agent
 cask "hermes-desktop"
 # Homebrew's official GUI
 cask "homebrew-app"
+# Apple tool to create multi-platform icons
+cask "icon-composer"
+# iPhone management application
+cask "imazing"
 # Voice input tool with AI transcription
 cask "input0"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 # Keyboard and mouse input visualizer
 cask "keyty"
+# App to manage software development and track bugs
+cask "linear"
 # Customise mouse behavior
 cask "linearmouse"
 # Menu bar performance monitor with recorded history and analytics
@@ -341,6 +371,8 @@ cask "neodisk"
 cask "neon-vision-editor"
 # Network diagnostics tool
 cask "network-weather"
+# App to write, plan, collaborate, and get organised
+cask "notion"
 # Tiling window manager
 cask "omniwm"
 # Local-first, agent-native design tool
@@ -355,14 +387,20 @@ cask "osaurus"
 cask "palmier-pro"
 # Desktop pet that reflects coding agent activity
 cask "petdex"
+# PostgreSQL client
+cask "pgen"
 # Menu bar status for coding agent sessions
 cask "ping-island"
 # Menu bar app to find and kill processes running on open ports
 cask "productdevbook/tap/portkiller"
+# App wrapper for Postgres
+cask "postgres-app"
 # Reports power adapter and battery status
 cask "power-monitor"
 # End-to-end encrypted notes, tasks, files, journal, passwords and bookmark sync
 cask "privacynotes"
+# HTTP debugging proxy
+cask "proxyman"
 # Open-source application manager and system cleaner
 cask "puremac"
 # Disk space analyzer
@@ -371,6 +409,8 @@ cask "radix"
 cask "reqable"
 # Manage, sync, and organise AI agent skills across coding tools
 cask "skills-manager"
+# Team communication and collaboration software
+cask "slack"
 # Native macOS screenshots, recording, annotation, and editing from the menu bar
 cask "duongductrong/snapzy/snapzy"
 # Network toolbox
