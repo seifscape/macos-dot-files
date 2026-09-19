@@ -203,8 +203,8 @@ brew "zoxide"
 brew "zsign"
 # High-performance asymmetric lossless compression library
 brew "zxc"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
 # Code intelligence tool that builds semantic knowledge graphs from source code
 brew "aovestdipaperino/tap/tokensave", trusted: true
 # CLI tool for interacting with iOS Simulators via accessibility and HID APIs
@@ -641,7 +641,7 @@ vscode "ritwickdey.liveserver"
 vscode "ryanluker.vscode-coverage-gutters"
 vscode "sallar.vscode-duotone-dark"
 vscode "sleistner.vscode-fileutils"
-vscode "sst-dev.opencode"
+vscode "sst-dev.opencode-v2"
 vscode "sujan.code-blue"
 vscode "swiftlang.swift-vscode"
 vscode "tailscale.vscode-tailscale"

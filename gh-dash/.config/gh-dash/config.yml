@@ -87,7 +87,7 @@ keybindings:
       name: code review
       command: >
         tmux new-window -n "PR-{{.PrNumber}}" 
-        'wt switch pr:{{.PrNumber}} -x "opencode --prompt `@code-reviewer: review-pr-for-this-branch`"'
+        'wt switch pr:{{.PrNumber}} -x "opencode --prompt \"@code-reviewer review the changes on this branch against its base\""'
 
 theme:
   colors:
