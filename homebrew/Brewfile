@@ -385,8 +385,6 @@ cask "orbstack"
 cask "osaurus"
 # Video Editor built for AI
 cask "palmier-pro"
-# Desktop pet that reflects coding agent activity
-cask "petdex"
 # PostgreSQL client
 cask "pgen"
 # Menu bar status for coding agent sessions
