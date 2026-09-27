@@ -9,7 +9,9 @@ fi
 
 # 🔁 Auto upgrade mise weekly
 MISE_UPGRADE_CHECK="$HOME/.cache/last_mise_upgrade"
-if [ ! -f "$MISE_UPGRADE_CHECK" ] || [ $(($(date +%s) - $(stat -f %m "$MISE_UPGRADE_CHECK"))) -ge 604800 ]; then
+# zstat instead of stat: `stat -f` is BSD-only and this also runs on Linux.
+zmodload -F zsh/stat b:zstat
+if [ ! -f "$MISE_UPGRADE_CHECK" ] || [ $(($(date +%s) - $(zstat +mtime "$MISE_UPGRADE_CHECK"))) -ge 604800 ]; then
   echo "🔄 Running mise upgrade..."
   mise upgrade --yes
   touch "$MISE_UPGRADE_CHECK"
