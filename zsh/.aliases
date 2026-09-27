@@ -2,10 +2,8 @@
 # Seif's Terminal Aliases
 # ====================================
 
-# --------- Dev Tools ---------
-alias ddd="rm -rf ~/Library/Developer/Xcode/DerivedData"
-alias fastlane='mise exec ruby@ios -- fastlane'
-alias pod='mise exec ruby@ios -- pod'
+# This file is shared with linux-dot-files (pulled in via chezmoi externals),
+# so anything macOS-only lives in the darwin block at the bottom.
 
 # --------- eza (pretty ls replacement) ---------
 alias ls="eza --icons --group-directories-first --color=always"
@@ -14,7 +12,7 @@ alias la="eza -la --icons --group-directories-first --color=always"
 alias lt="eza -T --icons --group-directories-first --color=always"
 
 # --------- clipboard ---------
-alias -g C='| pbcopy'
+alias -g C='| clip'                                         # clip: see ~/.functions
 
 # --------- wget ---------
 alias wget='wget --hsts-file=$HOME/.wget-hsts'
@@ -104,29 +102,39 @@ alias top='btop'
 alias df='duf'
 alias du='dust'
 alias ps='procs'
-alias battery='batt'
-alias gpu='asitop'
-alias mtop='mactop'
 alias ncdu='ncdu'
-alias gdu='gdu-go'
 alias tree='tree'
 
-# --------- dotfiles / homebrew ---------
-# Regenerate the tracked Brewfile from the current machine.
-# The PATH prefix puts real npm ahead of aube's shim; without it
-# Homebrew's npm extension fails to parse `npm list` and aborts.
-brewdump() {
-  local bf="$HOME/Developer/macos-dot-files/homebrew/Brewfile"
-  PATH="/opt/homebrew/bin:$PATH" brew bundle dump --force --file="$bf" || return
-  # mas reports TestFlight (and delisted) apps as id: 0. They are not App Store
-  # purchases, so `mas install 0` always fails -- drop them instead of tracking
-  # entries that can only break `brew bundle install` on a fresh machine.
-  local dropped
-  dropped=$(grep ', id: 0$' "$bf")
-  if [ -n "$dropped" ]; then
-    sed -i '' '/^mas .*, id: 0$/d' "$bf"
-    echo "dropped untracked TestFlight/unresolvable apps:"
-    echo "$dropped" | sed 's/^/  /'
-  fi
-  echo "Brewfile updated: $bf"
-}
+# --------- macOS only ---------
+if [[ $OSTYPE == darwin* ]]; then
+  # --------- Dev Tools ---------
+  alias ddd="rm -rf ~/Library/Developer/Xcode/DerivedData"
+  alias fastlane='mise exec ruby@ios -- fastlane'
+  alias pod='mise exec ruby@ios -- pod'
+
+  # --------- Apple Silicon monitors ---------
+  alias battery='batt'
+  alias gpu='asitop'
+  alias mtop='mactop'
+  alias gdu='gdu-go'                                         # Homebrew renames gdu to avoid coreutils
+
+  # --------- dotfiles / homebrew ---------
+  # Regenerate the tracked Brewfile from the current machine.
+  # The PATH prefix puts real npm ahead of aube's shim; without it
+  # Homebrew's npm extension fails to parse `npm list` and aborts.
+  brewdump() {
+    local bf="$HOME/Developer/macos-dot-files/homebrew/Brewfile"
+    PATH="/opt/homebrew/bin:$PATH" brew bundle dump --force --file="$bf" || return
+    # mas reports TestFlight (and delisted) apps as id: 0. They are not App Store
+    # purchases, so `mas install 0` always fails -- drop them instead of tracking
+    # entries that can only break `brew bundle install` on a fresh machine.
+    local dropped
+    dropped=$(grep ', id: 0$' "$bf")
+    if [ -n "$dropped" ]; then
+      sed -i '' '/^mas .*, id: 0$/d' "$bf"
+      echo "dropped untracked TestFlight/unresolvable apps:"
+      echo "$dropped" | sed 's/^/  /'
+    fi
+    echo "Brewfile updated: $bf"
+  }
+fi
