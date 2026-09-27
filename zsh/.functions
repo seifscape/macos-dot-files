@@ -13,6 +13,18 @@ lg() {
   fi
 }
 
+# --------- clipboard ---------
+
+# Copy stdin to the clipboard. pbcopy on macOS; elsewhere an OSC 52 escape,
+# which the local terminal (Ghostty) picks up even over SSH and inside tmux.
+clip() {
+  if (( $+commands[pbcopy] )); then
+    pbcopy
+  else
+    printf '\e]52;c;%s\a' "$(base64 | tr -d '\n')" >"${TTY:-/dev/tty}"
+  fi
+}
+
 # --------- python venv ---------
 
 # Auto-deactivate Python venv when leaving its parent directory
@@ -43,9 +55,12 @@ function batpick() {
 
 # Update all dev tools (brew + mise). ~/.config/scripts/dev-updates.sh only
 # reports outdated brew formulae at shell start; this actually upgrades.
+# The Linux boxes have no brew; mise carries their CLI tools.
 dev-refresh() {
   echo "🔁 Updating tools..."
-  brew update && brew upgrade
+  if (( $+commands[brew] )); then
+    brew update && brew upgrade
+  fi
   mise upgrade --yes && mise reshim
   echo "✅ Dev tools refreshed."
 }

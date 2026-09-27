@@ -36,7 +36,7 @@ bindkey '^Xl' clear-screen-and-scrollback
 
 # Copy current command buffer to clipboard
 function copy-buffer-to-clipboard() {
-  echo -n "$BUFFER" | pbcopy
+  echo -n "$BUFFER" | clip
   zle -M "Copied to clipboard"
 }
 zle -N copy-buffer-to-clipboard

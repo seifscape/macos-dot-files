@@ -344,6 +344,26 @@ never reaches GitHub. It is `.gitignore`d and must be recreated on each machine
 
 ---
 
+## Linux servers
+
+The Pi 5 and the UM890 run the same terminal from
+[linux-dot-files](https://github.com/seifscape/linux-dot-files), a chezmoi
+repo that pulls these files straight from `main` here instead of keeping its
+own copies:
+
+```
+zsh/.aliases  zsh/.functions  zsh/.exports  zsh/.zsh_bindings
+starship  tmux  nvim  atuin  btop  delta  gh-dash  scripts/dev-updates.sh
+git/.gitignore_global
+```
+
+So those files have to stay portable. macOS-only lines go behind
+`[[ $OSTYPE == darwin* ]]` (see the bottom of `.aliases`), clipboard goes
+through `clip` rather than `pbcopy`, and paths use `$HOME`, never
+`/Users/...`. Push here, then `chezmoi update` on a server picks it up.
+
+---
+
 ## Desktop
 
 Two pieces, each running independently.
