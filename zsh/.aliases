@@ -5,7 +5,6 @@
 # --------- Dev Tools ---------
 alias ddd="rm -rf ~/Library/Developer/Xcode/DerivedData"
 alias fastlane='mise exec ruby@ios -- fastlane'
-alias pod='mise exec ruby@ios -- pod'
 
 # --------- eza (pretty ls replacement) ---------
 alias ls="eza --icons --group-directories-first --color=always"

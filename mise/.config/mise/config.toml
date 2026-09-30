@@ -1,7 +1,7 @@
 [tools]
 python = "3.14.3"
 uv = "0.11.6"
-ruby = "3.3.0"
+ruby = "4.0.7"
 zig = "0.11.0"
 go = "1.24.2"
 node = "24.19.0"
@@ -14,7 +14,7 @@ aube = "latest"
 [tool_alias]
 
 [tool_alias.ruby.versions]
-ios = "3.3.0"
+ios = "4.0.7"
 
 [settings]
 python.compile = true
