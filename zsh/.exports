@@ -7,6 +7,12 @@ hash -d dev=~/Developer/
 hash -d dot=~/Developer/macos-dot-files/
 hash -d dl=~/Downloads
 
+# --------- Editor ---------
+# Used by git commit, crontab -e and sudoedit/sudo -e, which otherwise fall back
+# to vi or nano. sudoedit runs it as you, so it's your nvim with your config.
+export EDITOR=nvim
+export VISUAL=nvim
+
 # --------- fzf (catppuccin macchiato) ---------
 export FZF_DEFAULT_OPTS=" \
 --height 40% --layout=reverse --border \
