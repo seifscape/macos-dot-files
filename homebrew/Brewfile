@@ -16,6 +16,7 @@ tap "jesseduffield/lazydocker"
 tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
 tap "macpaw/taps"
 tap "marcvig/tap"
+tap "matthewpick/pesto-clipboard"
 tap "microsoft/git", trusted: true
 tap "muxy-app/tap"
 tap "productdevbook/tap", trusted: true
@@ -273,6 +274,8 @@ cask "davit"
 cask "dbngin"
 # Temperature and clock screensaver
 cask "degr"
+# All-in-one toolbox for developers
+cask "devutils"
 # Voice and text chat software
 cask "discord"
 # Disk benchmark and S.M.A.R.T. health monitor
@@ -345,6 +348,8 @@ cask "linearmouse"
 cask "mac-performance-monitor"
 # Open-source Mac cleaner, optimizer, and malware scanner
 cask "iliyami/macsai/mac-sai", trusted: true
+# Clipboard manager
+cask "maccy"
 # Screenshot and screen recording tool
 cask "macshot"
 # Screenshot and screen recording tool without upload integrations
@@ -377,6 +382,8 @@ cask "notion"
 cask "omniwm"
 # Local-first, agent-native design tool
 cask "open-design"
+# Instant actions for selected text
+cask "openclip"
 # Open-source design editor compatible with Figma
 cask "openpencil"
 # Replacement for Docker Desktop
@@ -385,6 +392,8 @@ cask "orbstack"
 cask "osaurus"
 # Video Editor built for AI
 cask "palmier-pro"
+# Clipboard manager
+cask "matthewpick/pesto-clipboard/pesto-clipboard", trusted: true
 # PostgreSQL client
 cask "pgen"
 # Menu bar status for coding agent sessions
