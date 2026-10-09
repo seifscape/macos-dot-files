@@ -414,6 +414,8 @@ cask "palmier-pro"
 cask "matthewpick/pesto-clipboard/pesto-clipboard", trusted: true
 # PostgreSQL client
 cask "pgen"
+# Image editor
+cask "photocraft"
 # Menu bar status for coding agent sessions
 cask "ping-island"
 # Project management tool for tasks, sprints and docs
