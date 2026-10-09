@@ -124,6 +124,12 @@ Surfaces your active Claude Code session at a glance:
 | Context | Window usage gauge — color shifts yellow at 60%, red at 80% | Always (during session) |
 | Cost | Accumulated session cost | After $0.10 spent |
 
+These pills are Claude Code's own statusline: the `claude-code` profile in `starship.toml`,
+rendered by `starship statusline claude-code`. Claude Code finds that command through the
+`statusLine` key in `~/.claude/settings.json`. That file isn't stowed, because Claude Code
+rewrites it for permissions, plugins and MCP servers, so `install.sh` merges in just that
+one key with `jq`. linux-dot-files sets the same key with a chezmoi `modify_` template.
+
 ### All segments
 
 | Segment | Content |

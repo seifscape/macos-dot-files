@@ -42,6 +42,22 @@ for dir in "$DOTFILES_DIR"/*(/N) "$DOTFILES_DIR"/.*(/N); do
   warn "Unregistered directory (not in PACKAGES): $name"
 done
 
+# ── Claude Code statusline ────────────────────────────────────────────────
+# ~/.claude/settings.json belongs to Claude Code (it rewrites it for
+# permissions, plugins and MCP servers), so it is not stowed. Merge in only
+# the statusLine key, which renders the claude-code profile in starship.toml.
+# linux-dot-files does the same with a chezmoi modify_ template.
+if ! command -v jq &>/dev/null; then
+  warn "jq not found — installing via Homebrew..."
+  brew install jq
+fi
+claude_settings="$HOME/.claude/settings.json"
+mkdir -p "${claude_settings:h}"
+[ -s "$claude_settings" ] || echo '{}' > "$claude_settings"
+merged=$(jq '.statusLine = {type: "command", command: "starship statusline claude-code", padding: 0}' "$claude_settings")
+print -r -- "$merged" > "$claude_settings"   # write in place: keeps the file's mode
+info "Set Claude Code statusLine to starship"
+
 # ── manual steps ──────────────────────────────────────────────────────────
 echo ""
 echo "${BOLD}Manual steps required on a new machine:${NC}"
