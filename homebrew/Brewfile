@@ -22,6 +22,7 @@ tap "muxy-app/tap"
 tap "productdevbook/tap", trusted: true
 tap "ricardodantas/tap"
 tap "tw93/tap", trusted: { formulae: ["mole"] }
+tap "xcodesorg/made", trusted: { formulae: ["xcodes"] }
 # Apple Intelligence from the command-line, with OpenAi-compatible API server
 brew "apfel"
 # Download with resuming and segmented downloading
@@ -48,6 +49,8 @@ brew "btop"
 brew "carthage"
 # Check Have I Been Pwned and see if it's time for you to change passwords
 brew "checkpwn"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
 # Cloudflare-based speed test with optional TUI
 brew "cloudflare-speed-cli"
 # Create and run Linux containers using lightweight virtual machines
@@ -94,6 +97,8 @@ brew "git-pkgs"
 brew "git-xet"
 # Blazing fast terminal-ui for git written in rust
 brew "gitui"
+# Open-source GitLab command-line tool
+brew "glab"
 # TUI and CLI that unifies every package manager on the system
 brew "gpk"
 # Futuristic take on hexdump
@@ -240,6 +245,8 @@ cask "badgeify"
 cask "bettercmdtab"
 # Display management tool
 cask "betterdisplay"
+# Live-animated widgets that sit on the desktop
+cask "bettermacwidgets"
 # Invoice manager
 cask "billy"
 # Desktop password and login vault
@@ -264,6 +271,8 @@ cask "claudebar"
 cask "clawd-on-desk"
 # Command-line interface for CleanMyMac
 cask "macpaw/taps/cleanmymac-cli", trusted: true
+# Markdown editor
+cask "colamd"
 # Menu bar display manager: DDC brightness, HiDPI, presets, virtual displays
 cask "crisp"
 # Server and cloud storage browser
@@ -297,6 +306,7 @@ cask "figma"
 # Radial command wheel triggered by holding a key and flicking the mouse
 cask "flick"
 cask "font-fira-code-nerd-font"
+cask "font-google-sans"
 cask "font-google-sans-flex"
 cask "font-hack-nerd-font"
 cask "font-input"
@@ -362,6 +372,12 @@ cask "mangodisk"
 cask "markdown-preview"
 # Minimal markdown editor
 cask "markviewer"
+# Manage and sync MCP server configurations across AI clients
+cask "mcplinker"
+# Markdown viewer and editor
+cask "mdhero"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
 # Fast, private, developer-first clipboard manager
 cask "hasanjafri/tap/mimer", trusted: true
 # Create mock APIs in seconds
@@ -384,6 +400,8 @@ cask "omniwm"
 cask "open-design"
 # Instant actions for selected text
 cask "openclip"
+# Disk space analyser
+cask "opendisk"
 # Open-source design editor compatible with Figma
 cask "openpencil"
 # Replacement for Docker Desktop
@@ -398,6 +416,8 @@ cask "matthewpick/pesto-clipboard/pesto-clipboard", trusted: true
 cask "pgen"
 # Menu bar status for coding agent sessions
 cask "ping-island"
+# Project management tool for tasks, sprints and docs
+cask "plane"
 # Menu bar app to find and kill processes running on open ports
 cask "productdevbook/tap/portkiller"
 # App wrapper for Postgres
@@ -414,16 +434,22 @@ cask "puremac"
 cask "radix"
 # Advanced API Debugging Proxy
 cask "reqable"
+# Photoshop alternative
+cask "robbietilton-compositor"
 # Manage, sync, and organise AI agent skills across coding tools
 cask "skills-manager"
 # Team communication and collaboration software
 cask "slack"
 # Native macOS screenshots, recording, annotation, and editing from the menu bar
 cask "duongductrong/snapzy/snapzy"
+# Open-source time tracker
+cask "solidtime"
 # Network toolbox
 cask "surge"
 # Menu bar customization tool
 cask "swiftbar"
+# Native Discord client
+cask "swiftcord"
 # Native database client for many database types
 cask "tablepro"
 # Lightweight database management tool
