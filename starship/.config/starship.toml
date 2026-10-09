@@ -51,6 +51,9 @@ Windows = ""
 Ubuntu = "󰕈"
 Linux = "󰌽"
 Arch = "󰣇"
+Debian = "󰣚"
+# Raspberry Pi OS is detected as Raspbian (default 🍓); show it as the Debian it is.
+Raspbian = "󰣚"
 
 [hostname]
 ssh_only = false
