@@ -97,8 +97,8 @@ deleted = "-"
 
 [status]
 style = 'bg:surface1 fg:blue'
-success_symbol = "􀆅 "
-symbol = "􀆄"
+success_symbol = " "
+symbol = ""
 format = "[ $symbol $common_meaning $signal_name]($style)"
 map_symbol = true
 disabled = false
