@@ -260,7 +260,7 @@ macos-dot-files/
 ├── tmux/                   # .tmux.conf  .config/tmux/tmux.reset.conf
 ├── atuin/                  # .config/atuin/config.toml
 ├── btop/                   # .config/btop/btop.conf
-├── fastfetch/              # .config/fastfetch/ — Catppuccin Mocha, shared with Linux
+├── fastfetch/              # .config/fastfetch/ — Catppuccin Frappé, shared with Linux
 ├── gh-dash/                # .config/gh-dash/config.yml
 ├── mise/                   # .config/mise/config.toml
 ├── omniwm/                 # .config/omniwm/settings.toml — tiling WM

@@ -2,7 +2,7 @@
 // (Arch + Raspberry Pi), which pulls this file from main. Keep it portable.
 //
 // The logo is ~/.config/fastfetch/logo.txt, which each machine supplies itself.
-// Its $1-$9 markers pick from the Catppuccin Mocha palette below:
+// Its $1-$9 markers pick from the Catppuccin Frappé palette (matches Ghostty) below:
 //   1 green  2 yellow  3 peach  4 red  5 mauve  6 blue  7 lavender  8 sapphire  9 teal
 // Mac: Apple rainbow 1-6. Arch: gradient 5 7 6 8 9. Pi: leaves 1, berry 4.
 {
@@ -11,15 +11,15 @@
     "source": "~/.config/fastfetch/logo.txt",
     "type": "file",
     "color": {
-      "1": "38;2;166;227;161",
-      "2": "38;2;249;226;175",
-      "3": "38;2;250;179;135",
-      "4": "38;2;243;139;168",
-      "5": "38;2;203;166;247",
-      "6": "38;2;137;180;250",
-      "7": "38;2;180;190;254",
-      "8": "38;2;116;199;236",
-      "9": "38;2;148;226;213"
+      "1": "38;2;166;209;137",
+      "2": "38;2;229;200;144",
+      "3": "38;2;239;159;118",
+      "4": "38;2;231;130;132",
+      "5": "38;2;202;158;230",
+      "6": "38;2;140;170;238",
+      "7": "38;2;186;187;241",
+      "8": "38;2;133;193;220",
+      "9": "38;2;129;200;190"
     },
     "padding": { "top": 2, "right": 3 }
   },
@@ -29,93 +29,93 @@
   "modules": [
     {
       "type": "custom",
-      "format": "{#38;2;88;91;112}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+      "format": "{#38;2;98;104;128}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
     },
     "break",
     {
       "type": "title",
       "key": "  \uf007",
-      "keyColor": "38;2;245;194;231",
-      "format": "{#1;38;2;203;166;247}{user-name}{#38;2;108;112;134}@{#1;38;2;137;180;250}{host-name}"
+      "keyColor": "38;2;244;184;228",
+      "format": "{#1;38;2;202;158;230}{user-name}{#38;2;115;121;148}@{#1;38;2;140;170;238}{host-name}"
     },
     {
       "type": "os",
       "key": "  ",
-      "keyColor": "38;2;137;180;250"
+      "keyColor": "38;2;140;170;238"
     },
     {
       "type": "kernel",
       "key": "  ",
-      "keyColor": "38;2;205;214;244"
+      "keyColor": "38;2;198;208;245"
     },
     {
       "type": "uptime",
       "key": "  󰅐",
-      "keyColor": "38;2;137;220;235"
+      "keyColor": "38;2;153;209;219"
     },
     {
       "type": "packages",
       "key": "  󰮯",
-      "keyColor": "38;2;249;226;175"
+      "keyColor": "38;2;229;200;144"
     },
     {
       // KWin on sirius; macOS only ever reports Quartz Compositor
       "type": "wm",
       "key": "  󰨇",
-      "keyColor": "38;2;137;180;250"
+      "keyColor": "38;2;140;170;238"
     },
     {
       "type": "terminal",
       "key": "  ",
-      "keyColor": "38;2;203;166;247"
+      "keyColor": "38;2;202;158;230"
     },
     {
       "type": "shell",
       "key": "  ",
-      "keyColor": "38;2;249;226;175"
+      "keyColor": "38;2;229;200;144"
     },
     "break",
     {
       "type": "custom",
-      "format": "{#38;2;88;91;112}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"
+      "format": "{#38;2;98;104;128}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"
     },
     "break",
     {
       "type": "host",
       "key": "  ",
-      "keyColor": "38;2;180;190;254"
+      "keyColor": "38;2;186;187;241"
     },
     {
       "type": "cpu",
       "key": "  ",
-      "keyColor": "38;2;166;227;161"
+      "keyColor": "38;2;166;209;137"
     },
     {
       "type": "gpu",
       "key": "  󱤓",
-      "keyColor": "38;2;243;139;168"
+      "keyColor": "38;2;231;130;132"
     },
     {
       "type": "memory",
       "key": "  󰍛",
-      "keyColor": "38;2;250;179;135"
+      "keyColor": "38;2;239;159;118"
     },
     {
       // Every mounted volume, so external drives show up while plugged in
       "type": "disk",
       "key": "  \uf0a0 {mountpoint}",
-      "keyColor": "38;2;148;226;213",
+      "keyColor": "38;2;129;200;190",
       "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem}"
     },
     {
       "type": "display",
       "key": "  󰍹",
-      "keyColor": "38;2;116;199;236"
+      "keyColor": "38;2;133;193;220"
     },
     {
       "type": "localip",
       "key": "  󰩟 {ifname}",
-      "keyColor": "38;2;245;194;231",
+      "keyColor": "38;2;244;184;228",
       "showPrefixLen": false
     },
     "break",
@@ -127,7 +127,7 @@
     "break",
     {
       "type": "custom",
-      "format": "{#38;2;88;91;112}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+      "format": "{#38;2;98;104;128}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
     }
   ]
 }
