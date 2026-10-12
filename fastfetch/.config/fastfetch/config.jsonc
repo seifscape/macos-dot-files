@@ -120,6 +120,12 @@
     },
     "break",
     {
+      // The terminal's 16 colours as blocks, normal row then bright row
+      "type": "colors",
+      "paddingLeft": 2
+    },
+    "break",
+    {
       "type": "custom",
       "format": "{#38;2;88;91;112}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
     }
