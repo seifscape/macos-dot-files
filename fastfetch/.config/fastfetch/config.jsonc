@@ -1,0 +1,127 @@
+// ~/.config/fastfetch/config.jsonc — shared by the Mac and linux-dot-files
+// (Arch + Raspberry Pi), which pulls this file from main. Keep it portable.
+//
+// The logo is ~/.config/fastfetch/logo.txt, which each machine supplies itself.
+// Its $1-$9 markers pick from the Catppuccin Mocha palette below:
+//   1 green  2 yellow  3 peach  4 red  5 mauve  6 blue  7 lavender  8 sapphire  9 teal
+// Mac: Apple rainbow 1-6. Arch: gradient 5 7 6 8 9. Pi: leaves 1, berry 4.
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/logo.txt",
+    "type": "file",
+    "color": {
+      "1": "38;2;166;227;161",
+      "2": "38;2;249;226;175",
+      "3": "38;2;250;179;135",
+      "4": "38;2;243;139;168",
+      "5": "38;2;203;166;247",
+      "6": "38;2;137;180;250",
+      "7": "38;2;180;190;254",
+      "8": "38;2;116;199;236",
+      "9": "38;2;148;226;213"
+    },
+    "padding": { "top": 2, "right": 3 }
+  },
+  "display": {
+    "separator": "    "
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "{#38;2;88;91;112}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+    },
+    "break",
+    {
+      "type": "title",
+      "key": "  \uf007",
+      "keyColor": "38;2;245;194;231",
+      "format": "{#1;38;2;203;166;247}{user-name}{#38;2;108;112;134}@{#1;38;2;137;180;250}{host-name}"
+    },
+    {
+      "type": "os",
+      "key": "  ",
+      "keyColor": "38;2;137;180;250"
+    },
+    {
+      "type": "kernel",
+      "key": "  ",
+      "keyColor": "38;2;205;214;244"
+    },
+    {
+      "type": "uptime",
+      "key": "  󰅐",
+      "keyColor": "38;2;137;220;235"
+    },
+    {
+      "type": "packages",
+      "key": "  󰮯",
+      "keyColor": "38;2;249;226;175"
+    },
+    {
+      // KWin on sirius; macOS only ever reports Quartz Compositor
+      "type": "wm",
+      "key": "  󰨇",
+      "keyColor": "38;2;137;180;250"
+    },
+    {
+      "type": "terminal",
+      "key": "  ",
+      "keyColor": "38;2;203;166;247"
+    },
+    {
+      "type": "shell",
+      "key": "  ",
+      "keyColor": "38;2;249;226;175"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "{#38;2;88;91;112}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"
+    },
+    "break",
+    {
+      "type": "host",
+      "key": "  ",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "cpu",
+      "key": "  ",
+      "keyColor": "38;2;166;227;161"
+    },
+    {
+      "type": "gpu",
+      "key": "  󱤓",
+      "keyColor": "38;2;243;139;168"
+    },
+    {
+      "type": "memory",
+      "key": "  󰍛",
+      "keyColor": "38;2;250;179;135"
+    },
+    {
+      // Every mounted volume, so external drives show up while plugged in
+      "type": "disk",
+      "key": "  \uf0a0 {mountpoint}",
+      "keyColor": "38;2;148;226;213",
+      "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem}"
+    },
+    {
+      "type": "display",
+      "key": "  󰍹",
+      "keyColor": "38;2;116;199;236"
+    },
+    {
+      "type": "localip",
+      "key": "  󰩟 {ifname}",
+      "keyColor": "38;2;245;194;231",
+      "showPrefixLen": false
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "{#38;2;88;91;112}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+    }
+  ]
+}
