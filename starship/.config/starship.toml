@@ -8,10 +8,7 @@ $hostname\
 $directory\
 ${custom.dir_end}\
 $git_branch$git_status\
-$line_break\
-$character"""
-
-right_format = """
+$fill\
 [](fg:surface1)\
 $status\
 $cmd_duration\
@@ -35,11 +32,17 @@ $aws\
 $azure\
 $time\
 $sudo\
-[](fg:surface1)"""
+[](fg:surface1)\
+$line_break\
+$character"""
 
 add_newline = true
 command_timeout = 3000
 palette = "catppuccin_mocha"
+
+[fill]
+symbol = "·"
+style = "fg:surface2"
 
 [os]
 disabled = false
