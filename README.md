@@ -91,7 +91,7 @@ procs   tldr    ripgrep fd      jq
 | `lazygit` | TUI git client |
 | `lazydocker` | TUI Docker client |
 | `gitui` | Rust-based TUI git client |
-| `git-delta` | Syntax-highlighted diffs (Catppuccin Frappe) |
+| `git-delta` | Syntax-highlighted diffs (Catppuccin Mocha) |
 | `mole` | macOS ultimate cleaner TUI |
 | `xcodes` | Install & switch Xcode versions |
 | `mint` | Swift CLI package manager |
@@ -254,13 +254,13 @@ macos-dot-files/
 ├── git/                    # .gitconfig  .gitignore_global
 ├── nvim/                   # .config/nvim/ — LazyVim + Catppuccin + plugins
 ├── sheldon/                # .config/sheldon/plugins.toml
-├── delta/                  # .config/delta/ — delta pager config (Catppuccin Frappe)
+├── delta/                  # .config/delta/ — delta pager config (Catppuccin Mocha)
 ├── starship/               # starship.toml — Catppuccin Mocha + Claude segment
 ├── ghostty/                # terminal config + Catppuccin icon + backgrounds
 ├── tmux/                   # .tmux.conf  .config/tmux/tmux.reset.conf
 ├── atuin/                  # .config/atuin/config.toml
 ├── btop/                   # .config/btop/btop.conf
-├── fastfetch/              # .config/fastfetch/ — Catppuccin Frappé, shared with Linux
+├── fastfetch/              # .config/fastfetch/ — Catppuccin Mocha, shared with Linux
 ├── gh-dash/                # .config/gh-dash/config.yml
 ├── mise/                   # .config/mise/config.toml
 ├── omniwm/                 # .config/omniwm/settings.toml — tiling WM

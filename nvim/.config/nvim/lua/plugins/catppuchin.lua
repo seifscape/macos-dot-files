@@ -5,6 +5,6 @@ return {
   ---@class CatppuccinOptions
   opts = {
     transparent_background = true,
-    flavour = "macchiato", -- British spelling: catppuccin ignores "flavor"
+    flavour = "mocha", -- British spelling: catppuccin ignores "flavor"
   },
 }
