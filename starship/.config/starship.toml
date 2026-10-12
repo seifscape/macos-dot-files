@@ -107,9 +107,11 @@ map_symbol = true
 disabled = false
 
 [sudo]
+# Shows while sudo's cached password is still valid
 disabled = false
-symbol = "⚡ "
+symbol = "󰌿"
 style = "bg:surface1 bold yellow"
+format = "[ $symbol ]($style)"
 
 
 [nodejs]
