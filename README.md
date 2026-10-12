@@ -8,7 +8,7 @@
 ![Shell](https://img.shields.io/badge/Shell-Zsh-89b4fa?style=flat-square&logo=gnubash&logoColor=white)
 ![Prompt](https://img.shields.io/badge/Prompt-Starship-DD0B78?style=flat-square&logo=starship&logoColor=white)
 ![Terminal](https://img.shields.io/badge/Terminal-Ghostty-f38ba8?style=flat-square)
-![Theme](https://img.shields.io/badge/Theme-Catppuccin%20Mocha-cba6f7?style=flat-square)
+![Theme](https://img.shields.io/badge/Theme-Catppuccin%20Frapp%C3%A9-ca9ee6?style=flat-square)
 
 </div>
 
@@ -91,7 +91,7 @@ procs   tldr    ripgrep fd      jq
 | `lazygit` | TUI git client |
 | `lazydocker` | TUI Docker client |
 | `gitui` | Rust-based TUI git client |
-| `git-delta` | Syntax-highlighted diffs (Catppuccin Mocha) |
+| `git-delta` | Syntax-highlighted diffs (Catppuccin Frappé) |
 | `mole` | macOS ultimate cleaner TUI |
 | `xcodes` | Install & switch Xcode versions |
 | `mint` | Swift CLI package manager |
@@ -254,13 +254,13 @@ macos-dot-files/
 ├── git/                    # .gitconfig  .gitignore_global
 ├── nvim/                   # .config/nvim/ — LazyVim + Catppuccin + plugins
 ├── sheldon/                # .config/sheldon/plugins.toml
-├── delta/                  # .config/delta/ — delta pager config (Catppuccin Mocha)
+├── delta/                  # .config/delta/ — delta pager config (Catppuccin Frappé)
 ├── starship/               # starship.toml — Catppuccin Mocha + Claude segment
 ├── ghostty/                # terminal config + Catppuccin icon + backgrounds
 ├── tmux/                   # .tmux.conf  .config/tmux/tmux.reset.conf
 ├── atuin/                  # .config/atuin/config.toml
 ├── btop/                   # .config/btop/btop.conf
-├── fastfetch/              # .config/fastfetch/ — Catppuccin Mocha, shared with Linux
+├── fastfetch/              # .config/fastfetch/ — Catppuccin Frappé, shared with Linux
 ├── gh-dash/                # .config/gh-dash/config.yml
 ├── mise/                   # .config/mise/config.toml
 ├── omniwm/                 # .config/omniwm/settings.toml — tiling WM
