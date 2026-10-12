@@ -278,7 +278,7 @@ disabled = false
 [custom.azfunc]
 command = "func --version 2>/dev/null | head -1"
 when = "test -f host.json"
-symbol = "⚡"
+symbol = "󱐋"
 style = "bg:surface1"
 format = "[ $symbol $output ]($style fg:yellow)"
 shell = ["bash", "--norc"]
