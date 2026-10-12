@@ -13,6 +13,11 @@
    "global_shortcuts": {
       "toggle": "control+SPACE"
    },
+   "font": {
+      "normal": {
+         "size": 15
+      }
+   },
    "theme": {
       "light": {
          "name": "catppuccin-mocha"
