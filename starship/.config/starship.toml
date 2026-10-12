@@ -1,10 +1,10 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 format = """
-[](red)\
+[](mauve)\
 $os\
 $hostname\
-[](bg:peach fg:red)\
+[](bg:peach fg:mauve)\
 $directory\
 ${custom.dir_end}\
 $git_branch$git_status\
@@ -46,7 +46,7 @@ style = "fg:surface2"
 
 [os]
 disabled = false
-style = "bg:red fg:crust"
+style = "bg:mauve fg:crust"
 
 [os.symbols]
 Macos = "󰀵"
@@ -61,7 +61,7 @@ Raspbian = "󰣚"
 [hostname]
 ssh_only = false
 format = "[ $hostname ]($style)"
-style = "bg:red fg:crust"
+style = "bg:mauve fg:crust"
 
 
 [directory]
