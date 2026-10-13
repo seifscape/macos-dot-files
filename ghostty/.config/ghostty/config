@@ -38,7 +38,7 @@ window-position-y = 73
 
 minimum-contrast = 1.1
 
-cursor-style = block
+cursor-style = bar
 cursor-style-blink = false
 mouse-hide-while-typing = true
 
