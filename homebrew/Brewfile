@@ -9,13 +9,12 @@ tap "emergetools/tap"
 tap "ender-wang/tap"
 tap "frankea/whisky"
 tap "gnomeria/tap", "https://github.com/gnomeria/tap.git"
-tap "hasanjafri/tap"
+tap "hasanjafri/tap", trusted: { casks: ["mimer"] }
 tap "iliyami/macsai"
 tap "iordv/tap", trusted: true
 tap "jesseduffield/lazydocker"
 tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
 tap "macpaw/taps"
-tap "marcvig/tap"
 tap "matthewpick/pesto-clipboard"
 tap "microsoft/git", trusted: true
 tap "muxy-app/tap"
@@ -155,8 +154,6 @@ brew "obscura"
 brew "paneru"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Tool for managing OCI containers and pods
-brew "podman"
 # Modern replacement for ps written in Rust
 brew "procs"
 # Rsync for cloud storage
@@ -231,20 +228,14 @@ cask "afterglow"
 cask "airstats"
 # AI notepad for meetings
 cask "anarlog"
-# Private desktop AI chat application
-cask "anythingllm"
 # User-friendly GUI app for Homebrew
 cask "applite"
 # Multi-track audio editor and recorder
 cask "audacity"
-# Multi-track audio editor and recorder
-cask "audacity@3"
 # Add apps to the menu bar
 cask "badgeify"
-# Replacement for the built-in Cmd+Tab app switcher
-cask "bettercmdtab"
-# Display management tool
-cask "betterdisplay"
+# Per-app volume, EQ and audio device control
+cask "betteraudio"
 # Live-animated widgets that sit on the desktop
 cask "bettermacwidgets"
 # Invoice manager
@@ -255,12 +246,8 @@ cask "bitwarden"
 cask "bruno"
 # Transcribe and translate audio
 cask "buzz"
-# Menu-bar timer that keeps the screen awake for a set duration
-cask "marcvig/tap/caffeine-timer", trusted: true
 # Terminal emulator
 cask "canario"
-# Native GUI for Homebrew casks
-cask "caskhub"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
@@ -289,8 +276,6 @@ cask "devutils"
 cask "discord"
 # Disk benchmark and S.M.A.R.T. health monitor
 cask "diskboard"
-# Window peeking utility app
-cask "dockdoor"
 # Drag and drop file shelf
 cask "droppy"
 # One click DMG installs
@@ -301,6 +286,8 @@ cask "easymac-cleaner"
 cask "ender-wang/tap/edgemark", trusted: true
 # Terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client
 cask "electerm"
+# Cross-platform Text Expander written in Rust
+cask "espanso"
 # Collaborative team software
 cask "figma"
 # Radial command wheel triggered by holding a key and flicking the mouse
@@ -360,6 +347,8 @@ cask "mac-performance-monitor"
 cask "iliyami/macsai/mac-sai", trusted: true
 # Clipboard manager
 cask "maccy"
+# Archive manager
+cask "macpacker"
 # Screenshot and screen recording tool
 cask "macshot"
 # Screenshot and screen recording tool without upload integrations
@@ -378,13 +367,11 @@ cask "mcplinker"
 cask "mdhero"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# Fast, private, developer-first clipboard manager
-cask "hasanjafri/tap/mimer", trusted: true
 # Create mock APIs in seconds
 cask "mockoon"
 # Open-source download manager
 cask "motrix@beta"
-# Terminal multiplexer for macOS
+# Terminal multiplexer
 cask "muxy-app/tap/muxy", trusted: true
 # Read-only disk space visualiser
 cask "neodisk"
@@ -406,10 +393,14 @@ cask "opendisk"
 cask "openpencil"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Native GUI for Apple Containers
+cask "orchard"
 # LLM server built on MLX
 cask "osaurus"
 # Video Editor built for AI
 cask "palmier-pro"
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
+cask "pearcleaner"
 # Clipboard manager
 cask "matthewpick/pesto-clipboard/pesto-clipboard", trusted: true
 # PostgreSQL client
@@ -460,14 +451,14 @@ cask "tabularis"
 cask "tcp-viewer"
 # Menu bar manager
 cask "thaw"
+# Customizable timing of breaks
+cask "time-out"
 # Monitor token usage, costs, and limits across AI coding tools
 cask "token-monitor"
 # Application launcher and command palette
 cask "vicinae"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
-# Manage Homebrew packages with a UI
-cask "wailbrew"
 # Native desktop app for coding agents
 cask "waku"
 # Menu bar app for USB-C cable diagnostics
@@ -484,16 +475,12 @@ cask "yaak"
 cask "zed"
 # Terminal for agent-driven development
 cask "zentty"
-mas "Amphetamine", id: 937984704
 mas "Apple Configurator", id: 1037126344
 mas "Asset Catalog Creator", id: 866571115
 mas "Bakery", id: 1575220747
-mas "BlinkMate", id: 6756325660
-mas "clipyboard", id: 6738871678
 mas "Clocker", id: 1056643111
 mas "CodeCows", id: 1176112058
 mas "Codye", id: 1516894961
-mas "Color Picker", id: 641027709
 mas "ColorSlurp", id: 1287239339
 mas "Command X", id: 6448461551
 mas "Darkroom", id: 953286746
@@ -520,11 +507,9 @@ mas "HotspotMeter", id: 6763610446
 mas "IconKit", id: 507135296
 mas "iMazing Converter", id: 1292198261
 mas "iMovie", id: 408981434
-mas "Intermission", id: 1439431081
 mas "IPTV Stream Player", id: 6479939671
 mas "Irvue", id: 1039633667
 mas "Itsyhome", id: 6758070650
-mas "Keynote", id: 409183694
 mas "Keynote", id: 361285480
 mas "Kickstart", id: 6758355178
 mas "LaunchBuddy", id: 1615169630
@@ -542,19 +527,15 @@ mas "MQTTAnalyzer", id: 1493015317
 mas "NetSpot", id: 514951692
 mas "Noa", id: 6475639117
 mas "Notchmeister", id: 1599169747
-mas "Numbers", id: 409203825
 mas "Numbers", id: 361304891
 mas "OhMyStar", id: 1218642292
 mas "One Thing", id: 1604176982
-mas "Pages", id: 409201541
 mas "Pages", id: 361309726
-mas "Pastel", id: 413897608
 mas "Pause", id: 1599313358
 mas "Petrify", id: 1451177988
 mas "PhotoScape X", id: 929507092
 mas "Pikka", id: 1195076754
 mas "PrettySwift for Xcode", id: 6465455455
-mas "Pure Paste", id: 1611378436
 mas "Push Hero", id: 1499227284
 mas "Rage Comics", id: 470373933
 mas "rcmd", id: 1596283165
