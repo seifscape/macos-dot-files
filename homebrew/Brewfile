@@ -6,18 +6,19 @@ tap "cameroncooke/axe"
 tap "darrylmorley/whatcable"
 tap "duongductrong/snapzy", "https://github.com/duongductrong/Snapzy", trusted: true
 tap "emergetools/tap"
-tap "ender-wang/tap"
+tap "ender-wang/tap", trusted: { casks: ["edgemark"] }
 tap "frankea/whisky"
 tap "gnomeria/tap", "https://github.com/gnomeria/tap.git"
 tap "hasanjafri/tap", trusted: { casks: ["mimer"] }
-tap "iliyami/macsai"
 tap "iordv/tap", trusted: true
 tap "jesseduffield/lazydocker"
 tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
-tap "macpaw/taps"
+tap "lab421/tap"
+tap "macpaw/taps", trusted: { casks: ["cleanmymac-cli"] }
 tap "matthewpick/pesto-clipboard"
 tap "microsoft/git", trusted: true
 tap "muxy-app/tap"
+tap "philipparndt/mqtt-analyzer"
 tap "productdevbook/tap", trusted: true
 tap "ricardodantas/tap"
 tap "tw93/tap", trusted: { formulae: ["mole"] }
@@ -154,6 +155,8 @@ brew "obscura"
 brew "paneru"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Terminal UI showing which processes are using TCP and UDP ports
+brew "portop"
 # Modern replacement for ps written in Rust
 brew "procs"
 # Rsync for cloud storage
@@ -220,34 +223,22 @@ brew "gnomeria/tap/usbtree"
 brew "jesseduffield/lazydocker/lazydocker", trusted: true
 # Terminal-based automated file organizer inspired by Hazel
 brew "ricardodantas/tap/hazelnut", trusted: true
-# Keep your computer awake while AI coding agents are working
-cask "adrafinil"
 # Classic After Dark screen savers emulator
 cask "afterglow"
-# Menu bar system monitor
-cask "airstats"
-# AI notepad for meetings
-cask "anarlog"
 # User-friendly GUI app for Homebrew
 cask "applite"
 # Multi-track audio editor and recorder
 cask "audacity"
-# Add apps to the menu bar
-cask "badgeify"
-# Per-app volume, EQ and audio device control
-cask "betteraudio"
-# Live-animated widgets that sit on the desktop
-cask "bettermacwidgets"
 # Invoice manager
 cask "billy"
 # Desktop password and login vault
 cask "bitwarden"
-# Open source IDE for exploring and testing APIs
-cask "bruno"
-# Transcribe and translate audio
-cask "buzz"
+# 3D creation suite
+cask "blender"
 # Terminal emulator
 cask "canario"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
@@ -256,48 +247,43 @@ cask "claude-code@latest"
 cask "claudebar"
 # Desktop pet that reacts to AI coding agents
 cask "clawd-on-desk"
-# Command-line interface for CleanMyMac
-cask "macpaw/taps/cleanmymac-cli", trusted: true
-# Markdown editor
-cask "colamd"
+# Image, video and clipboard optimiser
+cask "clop"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Menu bar display manager: DDC brightness, HiDPI, presets, virtual displays
 cask "crisp"
 # Server and cloud storage browser
 cask "cyberduck"
+# Archive and delete your data on social media platforms
+cask "cyd"
 # GUI for Apple's container CLI
 cask "davit"
 # Database version management tool
 cask "dbngin"
 # Temperature and clock screensaver
 cask "degr"
-# All-in-one toolbox for developers
-cask "devutils"
+# Utilities designed to make common development tasks easier
+cask "devtoys"
 # Voice and text chat software
 cask "discord"
-# Disk benchmark and S.M.A.R.T. health monitor
-cask "diskboard"
+# Anti-detect web browser
+cask "donut"
 # Drag and drop file shelf
 cask "droppy"
-# One click DMG installs
-cask "easydmg"
-# Cleaning, privacy, and system optimisation utility
-cask "easymac-cleaner"
-# Native macOS side-panel Markdown notes app
-cask "ender-wang/tap/edgemark", trusted: true
-# Terminal/ssh/sftp/telnet/serialport/RDP/VNC/Spice/ftp client
-cask "electerm"
 # Cross-platform Text Expander written in Rust
 cask "espanso"
 # Collaborative team software
 cask "figma"
-# Radial command wheel triggered by holding a key and flicking the mouse
-cask "flick"
+# Per-application volume mixer, equalizer, and audio router
+cask "finetune"
 cask "font-fira-code-nerd-font"
 cask "font-google-sans"
 cask "font-google-sans-flex"
 cask "font-hack-nerd-font"
 cask "font-input"
 cask "font-ioskeley-mono"
+cask "font-ioskeley-mono-term-nerd-font"
 cask "font-jetbrains-maple-mono"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
@@ -309,42 +295,38 @@ cask "font-monofur-nerd-font"
 cask "font-nebula-sans"
 cask "font-paper-mono"
 cask "font-sauce-code-pro-nerd-font"
-# Cross-platform multithreaded download manager
-cask "ghost-downloader"
+# File-automation app that watches folders and runs rules
+cask "lab421/tap/forel", trusted: true
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Free and open-source image editor
+cask "gimp"
 # Cross-platform Git credential storage for multiple hosting providers
 cask "git-credential-manager"
-# Git client for simultaneous branches on top of your existing workflow
-cask "gitbutler"
-# Desktop client for GitHub repositories
-cask "github"
 # Native client for GitHub Copilot
 cask "github-copilot-app"
 # IRC client
 cask "halloy"
+# Open-source video transcoder
+cask "handbrake-app"
 # Open-source desktop AI agent
 cask "hermes-desktop"
 # Homebrew's official GUI
 cask "homebrew-app"
 # Apple tool to create multi-platform icons
 cask "icon-composer"
+# Free and open-source media player
+cask "iina"
 # iPhone management application
 cask "imazing"
-# Voice input tool with AI transcription
-cask "input0"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Keyboard and mouse input visualizer
-cask "keyty"
+# Free and open-source painting and sketching program
+cask "krita"
 # App to manage software development and track bugs
 cask "linear"
 # Customise mouse behavior
 cask "linearmouse"
-# Menu bar performance monitor with recorded history and analytics
-cask "mac-performance-monitor"
-# Open-source Mac cleaner, optimizer, and malware scanner
-cask "iliyami/macsai/mac-sai", trusted: true
 # Clipboard manager
 cask "maccy"
 # Archive manager
@@ -355,28 +337,18 @@ cask "macshot"
 cask "macshot-offline"
 # Menu bar toolbox
 cask "mactools"
-# Disk cleaner and storage analyser
-cask "mangodisk"
-# Markdown previewer with bundled Quick Look extension
-cask "markdown-preview"
-# Minimal markdown editor
-cask "markviewer"
 # Manage and sync MCP server configurations across AI clients
 cask "mcplinker"
-# Markdown viewer and editor
-cask "mdhero"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# Create mock APIs in seconds
-cask "mockoon"
 # Open-source download manager
 cask "motrix@beta"
+# MQTT client for monitoring and debugging MQTT brokers
+cask "philipparndt/mqtt-analyzer/mqtt-analyzer", trusted: true
 # Terminal multiplexer
 cask "muxy-app/tap/muxy", trusted: true
 # Read-only disk space visualiser
 cask "neodisk"
-# Native code and text editor
-cask "neon-vision-editor"
 # Network diagnostics tool
 cask "network-weather"
 # App to write, plan, collaborate, and get organised
@@ -385,10 +357,6 @@ cask "notion"
 cask "omniwm"
 # Local-first, agent-native design tool
 cask "open-design"
-# Instant actions for selected text
-cask "openclip"
-# Disk space analyser
-cask "opendisk"
 # Open-source design editor compatible with Figma
 cask "openpencil"
 # Replacement for Docker Desktop
@@ -409,24 +377,18 @@ cask "pgen"
 cask "photocraft"
 # Menu bar status for coding agent sessions
 cask "ping-island"
-# Project management tool for tasks, sprints and docs
-cask "plane"
 # Menu bar app to find and kill processes running on open ports
 cask "productdevbook/tap/portkiller"
-# App wrapper for Postgres
-cask "postgres-app"
 # Reports power adapter and battery status
 cask "power-monitor"
-# End-to-end encrypted notes, tasks, files, journal, passwords and bookmark sync
-cask "privacynotes"
 # HTTP debugging proxy
 cask "proxyman"
+# System activity monitor for CPU, memory, GPU, disk and network
+cask "pulse"
 # Open-source application manager and system cleaner
 cask "puremac"
-# Disk space analyzer
-cask "radix"
-# Advanced API Debugging Proxy
-cask "reqable"
+# PDF editor for annotation and editing
+cask "revpdf-editor"
 # Photoshop alternative
 cask "robbietilton-compositor"
 # Manage, sync, and organise AI agent skills across coding tools
@@ -437,74 +399,43 @@ cask "slack"
 cask "duongductrong/snapzy/snapzy"
 # Open-source time tracker
 cask "solidtime"
-# Network toolbox
-cask "surge"
-# Menu bar customization tool
-cask "swiftbar"
+# System monitor for the menu bar
+cask "stats"
 # Native Discord client
 cask "swiftcord"
 # Native database client for many database types
 cask "tablepro"
 # Lightweight database management tool
 cask "tabularis"
-# Packet capture and inspection tool
-cask "tcp-viewer"
 # Menu bar manager
 cask "thaw"
 # Customizable timing of breaks
 cask "time-out"
-# Monitor token usage, costs, and limits across AI coding tools
-cask "token-monitor"
 # Application launcher and command palette
 cask "vicinae"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
-# Native desktop app for coding agents
-cask "waku"
 # Menu bar app for USB-C cable diagnostics
 cask "darrylmorley/whatcable/whatcable", trusted: true
 # Active community fork of the archived Wine wrapper
 cask "frankea/whisky/whisky", trusted: true
-# Manage native Linux VMs and remote WSL distros
-cask "wsl-manager"
 # Install and switch between multiple versions of Xcode
 cask "xcodes-app"
 # REST, GraphQL and gRPC client
 cask "yaak"
 # Multiplayer code editor
 cask "zed"
-# Terminal for agent-driven development
-cask "zentty"
-mas "Apple Configurator", id: 1037126344
-mas "Asset Catalog Creator", id: 866571115
-mas "Bakery", id: 1575220747
-mas "Clocker", id: 1056643111
 mas "CodeCows", id: 1176112058
-mas "Codye", id: 1516894961
-mas "ColorSlurp", id: 1287239339
-mas "Command X", id: 6448461551
 mas "Darkroom", id: 953286746
 mas "Dependencies", id: 1538972026
-mas "DetailsPro", id: 1524366536
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "DIGITS from T-Mobile", id: 1097606585
-mas "EditKIt Pro", id: 1659984546
-mas "Elmedia Player", id: 937759555
-mas "Enchanted", id: 6474268307
-mas "Eraser", id: 6758531046
-mas "Flighty", id: 1358823008
-mas "Fotor Photo Editor", id: 503039729
-mas "GarageBand", id: 682658836
-mas "Gladys", id: 1382386877
 mas "Guidance", id: 412759995
 mas "Hacktivate", id: 6748286602
-mas "Hand Mirror", id: 1502839586
-mas "Helm", id: 6479357934
+mas "Headjust", id: 6759303637
 mas "Hex Fiend", id: 1342896380
 mas "Home Assistant", id: 1099568401
-mas "HotspotMeter", id: 6763610446
-mas "IconKit", id: 507135296
 mas "iMazing Converter", id: 1292198261
 mas "iMovie", id: 408981434
 mas "IPTV Stream Player", id: 6479939671
@@ -518,60 +449,31 @@ mas "Linearity Curve", id: 1219074514
 mas "Linkwarden for Safari", id: 6763451006
 mas "Localiji", id: 6467663963
 mas "Localization Buddy", id: 6503285923
-mas "Lockera Widgets", id: 6466819847
-mas "Lumina - AI Wellness Companion", id: 6745821470
 mas "Magnet", id: 441258766
-mas "Menu World Time", id: 1446377255
 mas "Microsoft Outlook", id: 985367838
-mas "MQTTAnalyzer", id: 1493015317
-mas "NetSpot", id: 514951692
-mas "Noa", id: 6475639117
-mas "Notchmeister", id: 1599169747
 mas "Numbers", id: 361304891
-mas "OhMyStar", id: 1218642292
-mas "One Thing", id: 1604176982
 mas "Pages", id: 361309726
 mas "Pause", id: 1599313358
 mas "Petrify", id: 1451177988
-mas "PhotoScape X", id: 929507092
 mas "Pikka", id: 1195076754
-mas "PrettySwift for Xcode", id: 6465455455
 mas "Push Hero", id: 1499227284
 mas "Rage Comics", id: 470373933
-mas "rcmd", id: 1596283165
 mas "RocketSim", id: 1504940162
-mas "RunCat", id: 1429033973
 mas "Salaty", id: 1494640818
-mas "Sandkorn", id: 1377973524
-mas "Screenshot Studio", id: 6473832582
-mas "Session", id: 1521432881
-mas "Session Pal", id: 1515213004
-mas "SimCockpit", id: 6753228260
 mas "SiteSucker", id: 442168834
-mas "Speediness", id: 1596706466
 mas "SubnetCalc", id: 412946682
 mas "SVGShaper", id: 1566140414
-mas "Swift Playground", id: 1496833156
-mas "System Designer", id: 1102494854
 mas "Take Five", id: 424437399
-mas "Tasks", id: 1502903102
 mas "Telegram", id: 747648890
 mas "TestFlight", id: 899247664
-mas "TickTick", id: 966085870
-mas "Today", id: 6443714928
 mas "Tomito", id: 1526042938
-mas "Transporter", id: 1450874784
-mas "Trello", id: 1278508951
 mas "TripMode", id: 1513400665
 mas "Twitter", id: 1482454543
 mas "Tyme", id: 1461456897
 mas "Unsplash Wallpapers", id: 1284863847
-mas "Userscripts", id: 1463298887
 mas "Velja", id: 1607635845
-mas "WeTransfer", id: 1114922065
 mas "WhatsApp", id: 310633997
 mas "Windows App", id: 1295203466
-mas "WireGuard", id: 1451685025
 mas "XIndex", id: 6745623987
 vscode "akamud.vscode-theme-onedark"
 vscode "alefragnani.bookmarks"
