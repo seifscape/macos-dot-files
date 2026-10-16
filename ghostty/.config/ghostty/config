@@ -15,7 +15,10 @@ command = /bin/zsh -l
 #background-image-fit = cover
 background-blur = macos-glass-regular
 background-opacity = 0.95
-background-blur-radius = 40
+background-blur-radius = 20
+
+# Starfield shader from omerxx/dotfiles
+custom-shader = ~/.config/ghostty/shaders/space.glsl
 
 font-family = "JetBrainsMonoNL Nerd Font"
 font-family-bold = "JetBrainsMonoNL Nerd Font Bold"
