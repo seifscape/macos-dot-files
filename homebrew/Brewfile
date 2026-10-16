@@ -193,6 +193,8 @@ brew "usage"
 brew "wget"
 # LAN discovery tool with a modern TUI written in Go
 brew "whosthere"
+# Git worktrees + tmux windows for zero-friction parallel dev
+brew "workmux"
 # Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
 # Command-line tool to install and switch between multiple versions of Xcode
