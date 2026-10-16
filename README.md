@@ -96,6 +96,7 @@ procs   tldr    ripgrep fd      jq
 | `xcodes` | Install & switch Xcode versions |
 | `mint` | Swift CLI package manager |
 | `neovim` | Editor (LazyVim) |
+| `workmux` | Git worktree + tmux window per task, for parallel Claude Code sessions |
 
 ### Shell Plugins
 
@@ -256,8 +257,9 @@ macos-dot-files/
 ├── sheldon/                # .config/sheldon/plugins.toml
 ├── delta/                  # .config/delta/ — delta pager config (Catppuccin Frappé)
 ├── starship/               # starship.toml — Catppuccin Mocha + Claude segment
-├── ghostty/                # terminal config + Catppuccin icon + backgrounds
+├── ghostty/                # terminal config + Catppuccin icon + starfield shader
 ├── tmux/                   # .tmux.conf  .config/tmux/tmux.reset.conf
+├── superfile/              # .config/superfile/config.toml — Catppuccin Frappé, shared with Linux
 ├── atuin/                  # .config/atuin/config.toml
 ├── btop/                   # .config/btop/btop.conf
 ├── fastfetch/              # .config/fastfetch/ — Catppuccin Frappé, shared with Linux
@@ -361,6 +363,7 @@ own copies:
 ```
 zsh/.aliases  zsh/.functions  zsh/.exports  zsh/.zsh_bindings
 starship  tmux  nvim  atuin  btop  delta  gh-dash  scripts/dev-updates.sh
+ghostty/.config/ghostty/{config,shaders/space.glsl}  superfile/.config/superfile/config.toml
 git/.gitignore_global
 ```
 
@@ -516,7 +519,8 @@ Also available per rule: `titleRegex`, `assignToWorkspace`, `minWidth` /
 | `z <dir>` | Jump to frecent directory (zoxide) |
 | `Ctrl+R` | Atuin fuzzy history search |
 | `Ctrl+T` | fzf fuzzy file picker |
-| `spf` | Superfile TUI file browser |
+| `spf` | Superfile TUI file browser (Catppuccin Frappé; alias loads the repo config) |
+| `workmux add <name> -p "<task>"` | New worktree, branch and tmux window with a Claude session; `workmux merge` when done |
 | `ll` | `eza` long list with icons |
 | `la` | `eza` long list including hidden |
 | `lt` | `eza` tree view |
