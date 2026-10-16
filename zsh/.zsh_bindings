@@ -12,7 +12,7 @@ bindkey '^[[B' down-line-or-beginning-search
 
 # --------- fzf ---------
 bindkey '^T' fzf-file-widget
-bindkey '^R' fzf-history-widget
+# Ctrl+R is atuin's (bound by `atuin init zsh` in .zshrc)
 
 # --------- git shortcuts ---------
 bindkey -s '^Xgc' 'git commit -m ""\C-b'
