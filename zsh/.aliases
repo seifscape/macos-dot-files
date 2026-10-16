@@ -81,6 +81,10 @@ alias curl='curl --progress-bar'
 alias hist="atuin search -i"
 alias fbat="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
+# --------- superfile ---------
+# macOS reads ~/Library/Application Support/superfile; -c points it at the repo config (same path as Linux's default)
+alias spf='spf -c $HOME/.config/superfile/config.toml'
+
 # --------- misc quality of life ---------
 alias cls="printf '\033c'"                                     # Clear but keep scrollback
 alias reload="source ~/.zshrc && echo 'Zsh reloaded'"         # Quick reload
