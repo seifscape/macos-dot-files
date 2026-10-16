@@ -37,7 +37,7 @@ Modern CLI tools are better than their ancient counterparts. This setup replaces
 | `du` | `dust` | visual tree |
 | `ps` | `procs` | color, search, tree |
 | `man` | `tldr` | practical examples |
-| file browser | `yazi` | TUI, previews, bulk rename |
+| file browser | `superfile` (`spf`) | TUI, previews, themes |
 | shell history | `atuin` | encrypted sync, fuzzy search |
 
 ---
@@ -63,7 +63,7 @@ Modern CLI tools are better than their ancient counterparts. This setup replaces
 ### Modern CLI Tools
 
 ```
-eza     bat     delta   zoxide  yazi
+eza     bat     delta   zoxide  superfile
 fzf     atuin   btop    duf     dust
 procs   tldr    ripgrep fd      jq
 ```
@@ -516,7 +516,7 @@ Also available per rule: `titleRegex`, `assignToWorkspace`, `minWidth` /
 | `z <dir>` | Jump to frecent directory (zoxide) |
 | `Ctrl+R` | Atuin fuzzy history search |
 | `Ctrl+T` | fzf fuzzy file picker |
-| `y` | Yazi TUI file browser |
+| `spf` | Superfile TUI file browser |
 | `ll` | `eza` long list with icons |
 | `la` | `eza` long list including hidden |
 | `lt` | `eza` tree view |
