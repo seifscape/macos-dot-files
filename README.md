@@ -261,7 +261,7 @@ macos-dot-files/
 ├── tmux/                   # .tmux.conf  .config/tmux/tmux.reset.conf
 ├── superfile/              # .config/superfile/config.toml — Catppuccin Frappé, shared with Linux
 ├── atuin/                  # .config/atuin/config.toml
-├── btop/                   # .config/btop/btop.conf
+├── btop/                   # .config/btop/ — btop.conf + Catppuccin Frappé theme
 ├── fastfetch/              # .config/fastfetch/ — Catppuccin Frappé, shared with Linux
 ├── gh-dash/                # .config/gh-dash/config.yml
 ├── mise/                   # .config/mise/config.toml
