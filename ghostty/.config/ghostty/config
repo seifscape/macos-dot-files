@@ -33,6 +33,9 @@ adjust-box-thickness = -3
 window-decoration = auto
 window-padding-x = 10
 window-padding-y = 10
+# Fill the padding with the editor background (Neovim) and centre the grid
+window-padding-color = extend
+window-padding-balance = true
 window-width = 226
 window-height = 64
 window-position-x = 128
