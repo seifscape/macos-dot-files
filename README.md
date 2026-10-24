@@ -531,3 +531,13 @@ Also available per rule: `titleRegex`, `assignToWorkspace`, `minWidth` /
 | `fbat` | fzf file picker with bat preview |
 | `dev-refresh` | Update brew + mise |
 | `batpick <file>` | Interactively pick a bat theme with fzf |
+
+---
+
+## Credits
+
+- tmux setup (`.tmux.conf`, `tmux.reset.conf`) and the plugins [catppuccin-tmux](https://github.com/omerxx/catppuccin-tmux),
+  [tmux-sessionx](https://github.com/omerxx/tmux-sessionx) and [tmux-floax](https://github.com/omerxx/tmux-floax)
+  come from [omerxx/dotfiles](https://github.com/omerxx).
+- The starfield behind Ghostty (`space.glsl`) is a shader from [omerxx/dotfiles](https://github.com/omerxx/dotfiles).
+- Colours: [Catppuccin](https://catppuccin.com).
