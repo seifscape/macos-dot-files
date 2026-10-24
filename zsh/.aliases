@@ -14,6 +14,9 @@ alias lt="eza -T --icons --group-directories-first --color=always"
 # --------- clipboard ---------
 alias -g C='| clip'                                         # clip: see ~/.functions
 
+# --------- cliamp ---------
+alias cliamp='cliamp --visualizer-60fps'                    # flag-only, no config.toml key
+
 # --------- wget ---------
 alias wget='wget --hsts-file=$HOME/.wget-hsts'
 

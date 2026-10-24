@@ -17,7 +17,7 @@ fi
 
 # ── stow packages ─────────────────────────────────────────────────────────
 PACKAGES=(zsh git nvim delta starship ghostty scripts homebrew btop atuin tmux gh-dash mise sheldon
-          omniwm vicinae aube fastfetch superfile)
+          omniwm vicinae aube fastfetch superfile cliamp)
 
 for pkg in "${PACKAGES[@]}"; do
   if [ -d "$DOTFILES_DIR/$pkg" ]; then
