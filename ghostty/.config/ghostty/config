@@ -28,7 +28,7 @@ font-family-bold-italic = "JetBrainsMonoNL Nerd Font Bold Italic"
 font-size = 16
 font-thicken = false
 # adjust-cell-height = 40%
-adjust-box-thickness = -3
+adjust-box-thickness = -1
 
 window-decoration = auto
 window-padding-x = 10
