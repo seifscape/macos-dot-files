@@ -15,6 +15,9 @@ command = /bin/zsh -l
 #background-image-fit = cover
 background-blur = macos-glass-regular
 background-opacity = 0.95
+# Apply the opacity to cells with an explicit background too, so the tmux bar
+# blends with the blur and starfield instead of showing as a solid strip.
+background-opacity-cells = true
 background-blur-radius = 20
 
 # Starfield shader from omerxx/dotfiles
