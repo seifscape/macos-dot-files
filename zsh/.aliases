@@ -109,7 +109,6 @@ alias top='btop'
 alias df='duf'
 alias du='dust'
 alias ps='procs'
-alias ncdu='ncdu'
 alias tree='tree'
 
 # --------- macOS only ---------

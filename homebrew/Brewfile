@@ -145,8 +145,6 @@ brew "mkcert"
 brew "models"
 # Deep clean and optimize your Mac
 brew "mole"
-# NCurses Disk Usage
-brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Headless browser for AI agents and web scraping
