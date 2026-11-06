@@ -318,7 +318,6 @@ cask "iina"
 # iPhone management application
 cask "imazing"
 # Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Free and open-source painting and sketching program
 cask "krita"
 # App to manage software development and track bugs
