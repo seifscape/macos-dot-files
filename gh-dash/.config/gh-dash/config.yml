@@ -92,18 +92,18 @@ keybindings:
 theme:
   colors:
     text:
-      primary: "#F7F1FF"
-      secondary: "#5AD4E6"
-      inverted: "#F7F1FF"
-      faint: "#3E4057"
-      warning: "#FC618D"
-      success: "#7BD88F"
+      primary: "#c6d0f5"
+      secondary: "#99d1db"
+      inverted: "#232634"
+      faint: "#737994"
+      warning: "#e78284"
+      success: "#a6d189"
     background:
-      selected: "#535155"
+      selected: "#51576d"
     border:
-      primary: "#948AE3"
-      secondary: "#7BD88F"
-      faint: "#3E4057"
+      primary: "#babbf1"
+      secondary: "#a6d189"
+      faint: "#51576d"
   ui:
     sectionsShowCount: true
     table:

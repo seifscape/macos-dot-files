@@ -91,6 +91,7 @@ procs   tldr    ripgrep fd      jq
 | `lazygit` | TUI git client |
 | `lazydocker` | TUI Docker client |
 | `gitui` | Rust-based TUI git client |
+| `gh dash` | GitHub PR/issue dashboard TUI (Catppuccin Frappé; `gh extension install dlvhdr/gh-dash`) |
 | `git-delta` | Syntax-highlighted diffs (Catppuccin Frappé) |
 | `mole` | macOS ultimate cleaner TUI |
 | `xcodes` | Install & switch Xcode versions |
