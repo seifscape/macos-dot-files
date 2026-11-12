@@ -209,7 +209,7 @@ error_symbol = "[❯](bold fg:red)"
 claude-code = "[](lavender)$claude_model[](bg:surface1 fg:lavender)$claude_context${custom.statusline_git}[](fg:surface1)$claude_cost"
 
 [claude_model]
-format = "[$symbol$model ]($style)"
+format = "[$symbol$model( · $effort) ]($style)"
 symbol = "󰚩 "
 style = "bg:lavender fg:crust"
 model_aliases = {"claude-opus-4-7" = "opus 4.7", "claude-sonnet-4-6" = "sonnet 4.6", "claude-haiku-4-5-20251001" = "haiku 4.5", "claude-opus-4-5" = "opus 4.5", "claude-sonnet-4-5" = "sonnet 4.5"}
@@ -235,7 +235,7 @@ style = "bg:surface1 fg:red"
 
 # Caps live inside the format - they vanish when cost is hidden
 [claude_cost]
-format = " [](mauve)[\\$$cost ]($style)[](fg:mauve)"
+format = " [](mauve)[\\$$cost( +$lines_added -$lines_removed) ]($style)[](fg:mauve)"
 
 [[claude_cost.display]]
 threshold = 0.0
